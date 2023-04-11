@@ -1,0 +1,478 @@
+\documentclass[
+ jor,
+ amsmath,amssymb,preprint,
+ %reprint,
+%author-year,%
+%author-numerical,%
+]{revtex4-2}
+
+\usepackage{subfig}
+\usepackage{color}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+\usepackage{hyperref}
+
+\begin{document}
+
+\preprint{AIP/123-QED}
+
+\title[Probe Varying Gravitational Constant via GW]{Probe Varying Gravitational Constant via GW}% Force line breaks with \\
+
+
+
+\author{Bing Sun}
+\affiliation{%
+CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China%\\This line break forced% with \\
+}%
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+In this note, I give the effect of a varying gravitational constant on the gravitational waves (GWs) during propagation, which finally gives a very simple amplitude modification $\sqrt{\frac{G^{(o)}}{G^{(s)}}}$ and a phase correction proportional to $\partial_t\ln G$ ($\nabla^2 \ln G$) and $1/\omega$ for observation position.
+%
+\end{abstract}
+
+\keywords{gravitational constant, gravitational waves}
+
+\maketitle
+
+\section{Action method analogous to Electromagnetic Field}
+The Fierz-Pauli action for the field variable $h_{ab}$ is given by~\cite{roy2020probing}
+\begin{equation}
+\begin{aligned}
+S = & \frac{1}{64 \pi G} \int d^4 x\left(-\partial_a h_{b c} \partial^a h^{b c}+\partial_a h_b^b \partial^a h_c^c-2 \partial_a h_c^a \partial^c h_b^b+2 \partial_a h_c^a \partial_b h^{b c}\right)
+\end{aligned}
+\end{equation}
+We set gravitational constant $G$ as a function in a form $\phi^{-1}$ so that the action becomes
+\begin{equation}
+\begin{aligned}
+S = & \frac{1}{64 \pi} \int d^4 x~\phi\left(-\partial_a h_{b c} \partial^a h^{b c}+\partial_a h_b^b \partial^a h_c^c-2 \partial_a h_c^a \partial^c h_b^b+2 \partial_a h_c^a \partial_b h^{b c}\right) \label{origact}
+\end{aligned}
+\end{equation}
+In the Lorentz gauge of transverse trace variable $\bar{h}_{ab} = h_{ab} - \frac{1}{2}\eta_{ab}h$, $\partial^b \bar{h}_{ab} = 0$, the action \eqref{origact} has a simple form
+\begin{equation}
+\begin{aligned}
+S = & \frac{1}{64 \pi} \int d^4 x~\phi \left( -\partial_a\bar{h}_{bc}\partial^a\bar{h}^{bc} + \frac{1}{2}\partial_c\bar{h}\partial^c\bar{h} \right)
+\end{aligned}
+\end{equation}
+The equation of motion for this action becomes
+\begin{align}
+\square \tilde{h}_{ab} + \partial_c\tilde{h}_{ab}\partial^c\ln\phi = 0 \label{fereom}
+\end{align}
+where $\tilde{h}_{ab} = \bar{h}_{ab} - \frac{1}{2} \eta_{ab}\bar{h}$. We separate the variable as $\tilde{h}_{ab} = H_{ab}e^{-i\omega t}$
+\begin{equation}
+\begin{aligned}
+\nabla^2 H_{ab} + \omega^2 H_{ab} + i\omega \partial_t\ln \phi H_{ab} + \delta^{ij} \partial_j\ln \phi \partial_iH_{ab} = 0
+\end{aligned}
+\end{equation}
+If the GW travels along $z$-axis in a transverse-traceless gauge, $H_{ij} = H_{ij}(z)$ and the equation becomes
+\begin{align}
+\partial_z^2 H_{ij} + \omega^2 H_{ij} + i\omega \partial_t\ln \phi H_{ij} + \partial_z\ln \phi \partial_zH_{ij} = 0 \label{ferorg}
+\end{align}
+Furthermore, if $\phi = \phi(\vec{r})$, the expression eq.\eqref{ferorg} is solvable
+\begin{equation}
+\begin{aligned}
+\partial_z^2 H_{ij} + \partial_z \ln\phi \partial_z H_{ij} + \omega^2 H_{ij} = 0 \,,
+\end{aligned}
+\end{equation}
+giving rise to, in terms of eq.\eqref{sptsol} in Appendix \ref{sec:appa} with $y(z) = -\frac{1}{2}\partial_z^2g(z)$, $g(z) = \ln\phi$,
+\begin{equation}
+\begin{aligned}
+h^{(o)}_{ab}(\omega) = & \sqrt{\frac{G_o}{G_s}} \exp\bigg[ - \frac{i z\partial_z^2 \ln\phi}{4\omega} \bigg] h_{ab}^{(s)}(\omega) = \sqrt{\frac{G_o}{G_s}} \exp\bigg[i\omega z\frac{\partial_z^2 \ln G_o}{4\omega^2} \bigg] h_{ab}^{(s)}(\omega) \,. \label{fersptsol}
+\end{aligned}
+\end{equation}
+\textcolor{red}{The general form is ??}
+\begin{equation}
+h^{(o)}_{ab}(\omega) = \sqrt{\frac{G_o}{G_s}} \exp\bigg[i\frac{ \nabla^2 \ln G_o}{4\omega^2} \vec{k}\cdot\vec{r} \bigg] h_{ab}^{(s)}(\omega) ??
+\end{equation}
+
+Now we consider a special case
+\begin{equation}
+G = G_0(1+\alpha(1+r/\lambda) e^{-r/\lambda})
+\end{equation}
+or we use the symbol $z$
+\begin{equation}
+G = G_s(1+\alpha(1+z/\lambda) e^{-z/\lambda})
+\end{equation}
+where $z$ in radiation frame is equivalent to $r$ in source frame. Thus the function $y(z)$ is written as
+\begin{equation}
+y(z) = \frac{1}{2} \partial_z^2 \ln G = -\frac{\alpha}{2\lambda^2}e^{-z/\lambda} \bigg(1 - \frac{z}{\lambda} \bigg) \,.
+\end{equation}
+and substituting it into eq.\eqref{desfirorddiffeq} with $\xi = z$ we obtain
+\begin{equation}
+\begin{aligned}
+h = & A\cos(\omega z) + B \sin(\omega z) \\
+& + \frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2} \bigg[ 2\omega z(1 + \frac{2\lambda}{z} + 4\omega^2\lambda^2)(A\sin(\omega z)-B\cos(\omega z)) \\
+& - (1 + \frac{z}{\lambda} -4\omega^2\lambda^2(1 - \frac{z}{\lambda}))(A\cos(\omega z)+B\sin(\omega z))\bigg] \,.
+\end{aligned}
+\end{equation}
+The in-going wave condition $h = \mathcal{A}e^{i\omega z}$ requires $B = iA, A = \mathcal{A}$ and $h$ becomes
+\begin{equation}
+\begin{aligned}
+h = & \mathcal{A}e^{i\omega z} + \mathcal{A}\frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2} \bigg[ -2i\omega z(1 + \frac{2\lambda}{z} + 4\omega^2\lambda^2)e^{i\omega z} - (1 + \frac{z}{\lambda} -4\omega^2\lambda^2(1 - \frac{z}{\lambda}))e^{i\omega z}\bigg] \\
+= & \mathcal{A}e^{i\omega z} \bigg[1 - i\omega z\frac{\alpha e^{-z/\lambda}}{(1+4\omega^2\lambda^2)^2} \bigg(1 + \frac{2\lambda}{z} + 4\omega^2\lambda^2\bigg) - \frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2} \bigg(1 + \frac{z}{\lambda} -4\omega^2\lambda^2(1 - \frac{z}{\lambda})\bigg)  \bigg] \\
+= & \mathcal{A}e^{i\omega z} \exp\bigg[- i\omega z\frac{\alpha e^{-z/\lambda}}{(1+4\omega^2\lambda^2)^2} \bigg(1 + \frac{2\lambda}{z} + 4\omega^2\lambda^2\bigg) \bigg] \exp\bigg[- \frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2} \bigg(1 + \frac{z}{\lambda} -4\omega^2\lambda^2(1 - \frac{z}{\lambda})\bigg)\bigg] \,.
+\end{aligned}
+\end{equation}
+Therefore the GW is
+\begin{equation}
+\begin{aligned}
+h^{(o)}_{ab}(\omega) = &  \sqrt{\frac{G_o}{G_s}}\exp\bigg[- \frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2} \bigg(1 + \frac{z}{\lambda} -4\omega^2\lambda^2(1 - \frac{z}{\lambda})\bigg)\bigg] \\
+& \times \exp\bigg[- i k z\frac{\alpha e^{-z/\lambda}}{(1+4\omega^2\lambda^2)^2} \bigg(1 + \frac{2\lambda}{z} + 4\omega^2\lambda^2\bigg) \bigg] h_{ab}^{(s)}(\omega) \,. \label{spesptsol}
+\end{aligned}
+\end{equation}
+Furthermore if $\omega \lambda \gg 1$, the eq.\eqref{spesptsol} becomes
+\begin{equation}
+\begin{aligned}
+h^{(o)}_{ab}(\omega) = &  \sqrt{\frac{G_o}{G_s}}\exp\bigg[\frac{\alpha}{8\omega^2\lambda^2} \bigg(1 - \frac{z}{\lambda}\bigg)e^{-z/\lambda} \bigg] \exp\bigg[- i k z\frac{\alpha e^{-z/\lambda}}{4\omega^2\lambda^2} \bigg] h_{ab}^{(s)}(\omega) \\
+= & \sqrt{\frac{G_o}{G_s}}\exp\bigg[-\frac{\partial_z^2 \ln G_o}{8\lambda^2} \bigg] \exp\bigg[- i k z\frac{\alpha e^{-z/\lambda}}{4\omega^2\lambda^2} \bigg] h_{ab}^{(s)}(\omega) \,.
+\end{aligned}
+\end{equation}
+
+If $\phi = \phi(t)$, the new variable $\tilde{h}_{ij} = C_{ij}e^{ikz}H(t)$ obeys the relation from eq.\eqref{fereom}
+\begin{align}
+\partial_t^2 H + k^2H + \partial_t\ln\phi \partial_t H = 0
+\end{align}
+This, in terms of eq.\eqref{lapsol} with $y(t) = -\frac{1}{2}\partial_t^2g(t)$, $g(t) = -\ln G$, also makes the GW having the following relation during propagation
+\begin{equation}
+\begin{aligned}
+h^{(o)}_{ab}(\omega) = & \sqrt{\frac{G_o}{G_s}} \exp\bigg[-ik t\frac{\partial_t^2 \ln G_o}{4k^2} \bigg] h_{ab}^{(s)}(\omega) = \sqrt{\frac{G_o}{G_s}} \exp\bigg[-i\omega t\frac{\partial_t^2 \ln G_o}{4k^2} \bigg] h_{ab}^{(s)}(\omega)\,, \label{ferlapsol}
+\end{aligned}
+\end{equation}
+We expect an dispersion relation $\omega = k + \varepsilon k^{(1)}$ both in eq.\eqref{fersptsol} and \eqref{ferlapsol} and the second order term is omit, actually the dispersion relations from the phase corrections are given by
+\begin{align}
+\omega = & k + \frac{\partial_z^2\ln G_o}{4k} \quad \bigg( = k + \frac{\nabla^2\ln G}{4k} ????? \bigg)\,, \\
+\omega = & k - \frac{\partial_t^2\ln G_o}{4k}\,.
+\end{align}
+in eq.\eqref{fersptsol} and eq.\eqref{ferlapsol} respectively. The phase corrections in eq.\eqref{fersptsol} and \eqref{ferlapsol} are obvious depending on the second order derivative and proportional to $1/\omega$, while the amplitude correction depends on a factor $\sqrt{G_o/G_s}$.
+
+
+\section{Action method for Einstein-Hilbert action}
+Using the \textit{xAct} module in Mathematica, we expand the Lagrangian of Einstein-Hilbert action up to second order
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_{\mathrm{GR}} = \sqrt{-g}R = & -\frac{1}{2}\partial_b h \partial^b h - 2\partial_a h^{ab}\partial_c h^c_b + 2\partial_b h\partial_c h^{bc} + h\partial_b\partial_c h^{bc} \\
+& + 2h^{ab}(\partial_a\partial_b h-\partial_b\partial_c h^c_a - \partial_c\partial_b h^c_a + \square h_{ab})\\
+& - h \square h - \partial_b h_{ac}\partial^c h^{ab} + \frac{3}{2}\partial_c h_{ab}\partial^c h^{ab}
+\end{aligned}
+\end{equation}
+Using the transverse trace variable 
+\begin{align}
+\bar{h}_{ab} = h_{ab} - \frac{1}{2}\eta_{ab}h\,,~~h_{ab} = \bar{h}_{ab} - \frac{1}{2}\eta_{ab}\bar{h}
+\end{align}
+and the gauge condition
+\begin{align}
+\partial_a \bar{h}^{ab} = 0\,,~~\partial_ah^{ab} = \frac{1}{2} \partial^b h=-\frac{1}{2}\partial^b\bar{h}
+\end{align}
+it becomes 
+\begin{equation}
+\begin{aligned}
+\sqrt{-g}R = & -\frac{1}{2}\partial_b h \partial^b h - 2\partial_a h^{ab}\partial_c h^c_b + 2\partial_b h\partial_c h^{bc} + h\partial_b\partial_c h^{bc} + 2h^{ab}(\partial_a\partial_b h-\partial_b\partial_c h^c_a - \partial_c\partial_b h^c_a + \square h_{ab})\\
+& - h \square h - \partial_b h_{ac}\partial^c h^{ab} + \frac{3}{2}\partial_c h_{ab}\partial^c h^{ab} \\
+= & -\frac{1}{2}\partial_bh\partial^b h - \frac{1}{2}\partial^bh\partial_bh + \partial_bh\partial^bh + \frac{1}{2} h\square h + 2h^{ab}\partial_a\partial_b h - 2h^{ab}\partial_b\partial_a h + h^{ab}\square h_{ab} - h\square h\\
+& - \partial_b h_{ac}\partial^c h^{ab} + \frac{3}{2}\partial_c h_{ab}\partial^c h^{ab}\\
+= & -\frac{1}{2} h\square h + h^{ab}\square h_{ab} - \partial_b h_{ac}\partial^c h^{ab} + \frac{3}{2}\partial_c h_{ab}\partial^c h^{ab} \\
+= & -\frac{1}{2} \bar{h}\square \bar{h} + \bar{h}^{ab}\square \bar{h}_{ab} - \partial_b \bar{h}_{ac}\partial^c \bar{h}^{ab} - \frac{1}{4}\partial_b\bar{h} \partial^b\bar{h} + \frac{3}{2}\partial_c \bar{h}_{ab}\partial^c \bar{h}^{ab}
+\end{aligned}
+\end{equation}
+where we used the relations
+\begin{align}
+h^{ab} \square h_{ab} = & 2(\bar{h}^{ab}-\frac{1}{2}\eta^{ab}\bar{h})\square (\bar{h}_{ab} - \frac{1}{2}\eta_{ab}\bar{h}) = 2\bar{h}^{ab} \square \bar{h}_{ab} - 2 \bar{h}\square \bar{h} + 2\bar{h}\square \bar{h} = \bar{h}^{ab} \square \bar{h}_{ab} \\
+- h \square h = & -\bar{h}\square \bar{h}\\
+- \partial_b h_{ac}\partial^c h^{ab} = & -\partial_b(\bar{h}_{ac} - \frac{1}{2}\eta_{ac}\bar{h})\partial^c (\bar{h}^{ab}-\frac{1}{2}\eta^{ab}\bar{h}) = - \partial_b \bar{h}_{ac}\partial^c \bar{h}^{ab} + \partial_b \bar{h}\partial_a\bar{h}^{ab} - \frac{1}{4}\partial_b\bar{h} \partial^b\bar{h} \\
+= & - \partial_b \bar{h}_{ac}\partial^c \bar{h}^{ab} - \frac{1}{4}\partial_b \bar{h} \partial^b \bar{h} \\
+\frac{3}{2}\partial_c h_{ab}\partial^c h^{ab}  = & \frac{3}{2}\partial_c (\bar{h}_{ab} - \frac{1}{2}\eta_{ab}\bar{h}) \partial^c (\bar{h}^{ab}-\frac{1}{2}\eta^{ab}\bar{h}) = \frac{3}{2}\partial_c \bar{h}_{ab}\partial^c \bar{h}^{ab} -\frac{3}{2}\partial_c \bar{h} \partial^c \bar{h} + \frac{3}{2}\partial_ch\partial^c \bar{h} = \frac{3}{2}\partial_c \bar{h}_{ab}\partial^c \bar{h}^{ab}
+\end{align}
+Similarly the action for the GW is
+\begin{equation}
+\begin{aligned}
+S = & \frac{1}{16\pi G} \int d^4x\bigg[  -\frac{1}{2} \bar{h}\square \bar{h} + \bar{h}^{ab}\square \bar{h}_{ab} - \partial_b \bar{h}_{ac}\partial^c \bar{h}^{ab} - \frac{1}{4}\partial_b\bar{h} \partial^b\bar{h} + \frac{3}{2}\partial_c \bar{h}_{ab}\partial^c \bar{h}^{ab} \bigg] \\
+= & \frac{1}{16\pi } \int d^4x ~ \phi\bigg[  -\frac{1}{2} \bar{h}\square \bar{h} + \bar{h}^{ab}\square \bar{h}_{ab} - \partial_b \bar{h}_{ac}\partial^c \bar{h}^{ab} - \frac{1}{4}\partial_b\bar{h} \partial^b\bar{h} + \frac{3}{2}\partial_c \bar{h}_{ab}\partial^c \bar{h}^{ab} \bigg] \\
+\end{aligned}
+\end{equation}
+We work in TT gauge
+\begin{equation}
+\begin{aligned}
+S = & \frac{1}{16\pi } \int d^4x ~ \phi\bigg[ \bar{h}^{ij}\square \bar{h}_{ij} - \partial_j \bar{h}_{ik}\partial^k \bar{h}^{ij} + \frac{3}{2}\partial_c \bar{h}_{ij}\partial^c \bar{h}^{ij} \bigg] \\
+\end{aligned}
+\end{equation}
+and EOM becomes
+\begin{equation}
+\begin{aligned}
+\phi\square \bar{h}_{ij} + \square (\phi \bar{h}_{ij}) + 2\partial^k(\phi\partial_j \bar{h}_{ik}) - \frac{3}{2}\partial^a (\phi \partial_a \bar{h}_{ij}) = 0
+\end{aligned}
+\end{equation}
+or
+\begin{equation}
+\begin{aligned}
+\square \bar{h}_{ij} + \bigg(\frac{2}{\phi}\square \phi \bigg)\bar{h}_{ij} + \partial^a \ln\phi \partial_a\bar{h}_{ij} + 4\partial^k \ln\phi\partial_j \bar{h}_{ik} = 0
+\end{aligned}
+\end{equation}
+The first case assumed as $\phi = \phi(\vec{r})$, we obtain the differential equations of $\bar{h}_{ij}$
+\begin{equation}
+\begin{aligned}
+\square \bar{h}_{ij} + \bigg(\frac{2}{\phi}\nabla^2 \phi\bigg) \bar{h}_{ij} + \partial^k \ln\phi \partial_k \bar{h}_{ij} + 4\partial^k \ln\phi\partial_j \bar{h}_{ik} = 0
+\end{aligned}
+\end{equation}
+We then separate the variables as $\bar{h}_{ij} = H_{ij}e^{-i\omega t}$ so the spatial differential equations become
+\begin{equation}
+\begin{aligned}
+\nabla^2H_{ij} + \bigg[ \omega^2 + \frac{2}{\phi}\nabla^2 \phi\bigg]H_{ij} + \partial^k \ln\phi \partial_k H_{ij} + 4\partial^k \ln\phi\partial_j H_{ik} = 0
+\end{aligned}
+\end{equation}
+Because the GW travels along $z$-axi, the $H_{ij}$ is the function of $z$ only
+\begin{equation}
+\begin{aligned}
+\nabla^2 H_{ij} + \bigg[ \omega^2 + \frac{2}{\phi}\nabla^2 \phi \bigg]H_{ij} + \partial^z \ln\phi \partial_z H_{ij} + 4\delta^z_j\partial^k \ln\phi\partial_z H_{ik} = 0
+\end{aligned}
+\end{equation}
+In TT gauge, $H_{ij}$ furthermore only has $x,y$ components so the equations become
+\begin{equation}
+\begin{aligned}
+\nabla^2 h + \bigg[ \omega^2 + \frac{2}{\phi}\nabla^2 \phi \bigg]h + \partial^z \ln\phi \partial_z h = 0 \label{desspteq1}
+\end{aligned}
+\end{equation}
+where $h$ represents $h_+$ or $h_\times$. Approximately, this system has a frequency shift $\frac{1}{\omega\phi}\nabla^2\phi$. This equation has the same form to the eq.\eqref{dessoleq} with $f(z) = \frac{2}{\phi}\nabla^2 \phi \approx 2\nabla^2\ln \phi$, $g(z) = \ln\phi$. Therefore the forward wave solution to eq.\eqref{desspteq1} is
+\begin{equation}
+\begin{aligned}
+h^{(o)}_{ab}(\omega) = & \sqrt{\frac{G_o}{G_s}} \exp\bigg[iz \frac{ 4\nabla^2\ln \phi -\partial_z^2 \ln\phi}{4\omega} \bigg] h_{ab}^{(s)}(\omega) \\
+= & \sqrt{\frac{G_o}{G_s}} \exp\bigg[-ikz \frac{ 4\nabla^2\ln G_o -\partial_z^2 \ln G_o}{4\omega^2} \bigg] h_{ab}^{(s)}(\omega) \,.
+\label{ehsptsol}
+\end{aligned}
+\end{equation}
+\textcolor{red}{The general form is ??}
+\begin{equation}
+h^{(o)}_{ab}(\omega) = \sqrt{\frac{G_o}{G_s}} \exp\bigg[ \frac{3\nabla^2 \ln G_o}{8\omega^2}\bigg] \exp\bigg[-i\frac{ 3\nabla^2 \ln G_o}{4\omega^2} \vec{k}\cdot\vec{r} \bigg] h_{ab}^{(s)}(\omega) ??
+\end{equation}
+
+Now we consider the specific form of gravitational constant as
+\begin{equation}
+G = G_s(1+\alpha(1+z/\lambda) e^{-z/\lambda})\,.
+\end{equation}
+Again using the two variable expansion method and matching the eq.\eqref{heq} with
+\begin{align}
+y(z) = & 2\nabla^2\ln\phi - \frac{1}{2}\partial_z^2\ln\phi = \frac{\alpha}{2\lambda^2}\bigg( 11 - \frac{3z}{\lambda} \bigg) e^{-z/\lambda}\,,\\
+g(z) = & \ln\phi = -\ln G \approx - \alpha\bigg(1+\frac{z}{\lambda}\bigg)e^{-z/\lambda}\,,
+\end{align}
+the solution is 
+\begin{equation}
+\begin{aligned}
+h = & A\cos(\omega z) + B\sin(\omega z) \\
+& + \frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2}\bigg[ 5 - \frac{3z}{\lambda} + \bigg(44 - \frac{12z}{\lambda}\bigg) \lambda^2\omega^2 \bigg]\big[ A\cos(\omega z) + B\sin(\omega z) \big]  \\
+& + \frac{\alpha e^{-z/\lambda}}{(1+4\omega^2\lambda^2)^2}\omega z \bigg[ 3 - \frac{2\lambda}{z} + \bigg(12 - \frac{16\lambda}{z} \bigg) \lambda^2\omega^2 \bigg] \big[A\sin(\omega z) - B\cos(\omega z)\big]
+\end{aligned}
+\end{equation}
+The in-going wave condition $h = \mathcal{A}e^{i\omega z}$ requires $B = iA, A = \mathcal{A}$ and $h$ becomes
+\begin{equation}
+\begin{aligned}
+h = & \mathcal{A}e^{i\omega z}\bigg\{ 1 + \frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2} \bigg[ 5 - \frac{3z}{\lambda} + \bigg(44 - \frac{12z}{\lambda}\bigg) \lambda^2\omega^2 \bigg] \\
+&  - i \frac{\alpha e^{-z/\lambda}}{(1+4\omega^2\lambda^2)^2}\omega z \bigg[ 3 - \frac{2\lambda}{z} + \bigg(12 - \frac{16\lambda}{z} \bigg) \lambda^2\omega^2 \bigg] \bigg\} \\
+= & \mathcal{A}e^{i\omega z} \exp\bigg\{ \frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2} \bigg[ 5 - \frac{3z}{\lambda} + \bigg(44 - \frac{12z}{\lambda}\bigg) \lambda^2\omega^2 \bigg] \bigg\} \\
+& \times \exp\bigg\{ i \frac{\alpha e^{-z/\lambda}}{(1+4\omega^2\lambda^2)^2}\omega\lambda \bigg[ 2 -\frac{3z}{\lambda} + \bigg(16 - \frac{12z}{\lambda} \bigg) \lambda^2\omega^2 \bigg] \bigg\} \,.
+\end{aligned}
+\end{equation}
+Therefore the GW is
+\begin{equation}
+\begin{aligned}
+h^{(o)}_{ab}(\omega) = &  \sqrt{\frac{G_o}{G_s}} \exp\bigg\{ \frac{\alpha e^{-z/\lambda}}{2(1+4\omega^2\lambda^2)^2} \bigg[ 5 - \frac{3z}{\lambda} + \bigg(44 - \frac{12z}{\lambda}\bigg) \lambda^2\omega^2 \bigg] \bigg\} \\
+& \times \exp\bigg\{ i \frac{\alpha e^{-z/\lambda}}{(1+4\omega^2\lambda^2)^2}\omega\lambda \bigg[ 2 -\frac{3z}{\lambda} + \bigg(16 - \frac{12z}{\lambda} \bigg) \lambda^2\omega^2 \bigg] \bigg\} h^{(s)}_{ab}(\omega) \,. \label{ehspesptsol}
+\end{aligned}
+\end{equation}
+Furthermore if $\omega \lambda \gg 1$, the eq.\eqref{ehspesptsol} becomes
+\begin{equation}
+\begin{aligned}
+h^{(o)}_{ab}(\omega) = & \sqrt{\frac{G_o}{G_s}} \exp\bigg[ \frac{\alpha e^{-z/\lambda}}{8\omega^2\lambda^2} \bigg(11 - \frac{3z}{\lambda}\bigg)  \bigg] \exp\bigg[ i \frac{\alpha e^{-z/\lambda}}{\omega\lambda} \bigg(1 - \frac{3z}{4\lambda} \bigg) \bigg] h_{ab}^{(s)}(\omega) \\
+= & \sqrt{\frac{G_o}{G_s}} \exp\bigg[ -\frac{1}{4\omega^2} \bigg(2\nabla^2\ln G - \frac{1}{2}\partial_z^2\ln G\bigg)  \bigg] \exp\bigg[ i \frac{\alpha e^{-z/\lambda}}{\omega\lambda} \bigg(1 - \frac{3z}{4\lambda} \bigg) \bigg] h_{ab}^{(s)}(\omega) \,.
+\end{aligned}
+\end{equation}
+
+
+
+If the dependence becomes $\phi = \phi(t)$, the EOM becomes
+\begin{equation}
+\begin{aligned}
+\frac{1}{2}\square \bar{h}_{ij} + \frac{\bar{h}_{ij}}{\phi}\square \phi + \frac{1}{2} \partial^a \ln\phi \partial_a\bar{h}_{ij} + 2\partial^k \ln\phi\partial_j \bar{h}_{ik} = 0
+\end{aligned}
+\end{equation}
+or after variable separation $\bar{h}_{ij} = C_{ij}e^{ikz}H(t)$
+\begin{equation}
+\begin{aligned}
+\partial_t^2H + \partial_t\ln\phi \partial_tH + (k^2 + 2\partial_t^2\ln\phi) H = 0
+\end{aligned}
+\end{equation}
+This, in terms of eq.\eqref{lapsol} with $y(t) = 2\partial_t^2\phi - \frac{1}{2}\partial_t^2\ln\phi = \frac{3}{2}\partial_t^2\ln\phi = -\frac{3}{2}\partial_t^2\ln G$, $g(t) = -\ln G$, also makes the forward GW having the following relation during propagation
+\begin{equation}
+\begin{aligned}
+h^{(o)}_{ab}(\omega) = & \sqrt{\frac{G_o}{G_s}} \exp\bigg[ik t\frac{3\partial_t^2 \ln G_o}{4k^2} \bigg] h_{ab}^{(s)}(\omega) = \sqrt{\frac{G_o}{G_s}} \exp\bigg[i\omega t\frac{3\partial_t^2 \ln G_o}{4k^2} \bigg] h_{ab}^{(s)}(\omega)\,. \label{ehlapsol}
+\end{aligned}
+\end{equation}
+The dispersion relations from the phase corrections are given by
+\begin{align}
+\omega = & k - \frac{ 4\nabla^2\ln G_o -\partial_z^2 \ln G_o}{4k} \quad \bigg( = k + \frac{ 3\nabla^2 \ln G_o}{4k}????? \bigg) \,, \\
+\omega = & k + \frac{ 3\partial_t^2 \ln G_o}{4k} \,.
+\end{align}
+in eq.\eqref{ehsptsol} and eq.\eqref{ehlapsol} respectively. These dispersion relation gives rise to the derivate from light speed by
+\begin{align}
+|\nabla^2\ln G| < \frac{16\pi^2}{3} f^2 \Delta c\,, \\
+|\partial_t^2\ln G| < \frac{16\pi^2}{3} f^2 \Delta c\,.
+\end{align}
+
+
+\section{Appendix A: Solving wave equation}
+\label{sec:appa}
+In this appendix, we solve the wave equation. By expressing $h_{ij}$ as a Fourier transform, the
+wave equation for each Fourier amplitude becomes the following general form
+\begin{equation}
+\begin{aligned}
+\partial_z^2 H + \bigg[ \omega^2 + \alpha f(z) \bigg]H + \alpha\partial_z g(z) \partial_z H = 0\,.\label{dessoleq}
+\end{aligned}
+\end{equation}
+We define the variable $h(z)$ through
+\begin{align}
+H(z) = \exp\bigg[-\frac{1}{2}\alpha\int \partial_zg(z)dz  \bigg]h(z) = \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} h(z) 
+\end{align}
+and we have the new equation for $h(z)$
+\begin{equation}
+\begin{aligned}
+\ddot{h}(z) + \bigg\{ \omega^2 + \alpha[f(z) - \frac{1}{2}\partial_z^2g(z)] + \frac{1}{4}\alpha^2[\partial_zg(z)]^2 \bigg\} h(z) = 0
+\end{aligned}
+\end{equation}
+Since we only want to see the leading order, we
+rewrite the equation as
+\begin{equation}
+\begin{aligned}
+\ddot{h}(z) + \big[ \omega^2 + \alpha y(z) \big] h(z) = 0\,,~~y(z) = f(z) - \frac{1}{2}\partial_z^2g(z)\,.  \label{heq}
+\end{aligned}
+\end{equation}
+We solve the equation \eqref{heq} by the two variable expansion method treating the $h(z)$ as a function of the two independent variables $(\xi,\eta)$ so that the derivative respect to $z$ become 
+\begin{equation}
+\frac{d}{dz} = \frac{\partial}{\partial \xi} + \alpha \frac{\partial}{\partial \eta}
+\end{equation}
+We expand $h$ and the terms in eq.\eqref{heq}
+\begin{align*}
+& h(\xi,\eta) = h_0(\xi,\eta) + \alpha h_1(\xi,\eta) + \cdots \\
+& \partial_z^2 h(\xi,\eta) = \partial_\xi^2 h_0(\xi,\eta) + 2\alpha \partial_\xi\partial_\eta h_0(\xi,\eta) + \alpha \partial_\xi^2 h_1(\xi,\eta) + \alpha^2\frac{\partial^2}{\partial\eta^2}h_0 + 2\alpha^2\partial_\xi\partial_\eta h_1 + \alpha^2\partial_\xi^2 h_2 + \cdots \\
+& (\omega^2 + \alpha y(z)) h(\xi,\eta) = \omega^2 h_0(\xi,\eta) + \alpha\omega^2 h_1(\xi,\eta) + \alpha y(\xi) h_0(\xi,\eta) + \alpha^2y(\xi)h_1(\xi,\eta) + \alpha^2\omega^2 h_2(\xi,\eta) + \cdots \,,
+\end{align*}
+which gives rise to three differential equations
+\begin{align}
+& (\partial_\xi^2 + \omega^2) h_0(\xi,\eta) = 0 \label{diff1}\,, \\
+& (\partial_\xi^2 + \omega^2) h_1(\xi,\eta) = -2\partial_\xi\partial_\eta h_0(\xi,\eta) - y(\xi)h_0(\xi,\eta)\,. \label{diff2} \\
+& (\partial_\xi^2 + \omega^2) h_2(\xi,\eta) = -2\partial_\xi\partial_\eta h_1(\xi,\eta) - \partial_\eta^2 h_0(\xi,\eta) - y(\xi)h_1(\xi,\eta)
+\end{align}
+The equation \eqref{diff1} gives $h_0$ in the form of
+\begin{equation}
+\begin{aligned}
+h_0 = A(\eta)\cos(\omega\xi) + B(\eta)\sin(\omega\xi) \,, \label{h0}
+\end{aligned}
+\end{equation}
+and putting this into eq.\eqref{diff2} gives
+\begin{equation}
+\begin{aligned}
+(\partial_\xi^2 + \omega^2) h_1(\xi,\eta) = & 2\omega(A'\sin(\omega\xi)-B'\cos(\omega\xi)) - y(\xi)(A\cos(\omega\xi) + B\sin(\omega\xi)) \\
+= & (2\omega A' - y(\xi)B)\sin(\omega\xi) - (2\omega B'+ y(\xi)A)\cos(\omega\xi) \label{diff2sol}
+\end{aligned}
+\end{equation}
+Referring to the method to solve Mathieu equation, the RHS in eq.\eqref{diff2sol} vanishies to solve $A$ and $B$, and we obtain
+\begin{equation}
+\begin{aligned}
+\frac{dA}{d\eta} = \frac{y(\xi)}{2\omega}B\,, ~~ \frac{dB}{d\eta} = - \frac{y(\xi)}{2\omega}A\,,
+\end{aligned}
+\end{equation}
+However the two differential equations of $A$ and $B$ also depend on $y(\xi)$ or variable $\xi$, which breaks the condition that only relies on $\eta$. (If $y(\xi)$ is a constant, it is easy to solve eq.\eqref{heq} by modifying $\tilde{\omega}^2 = \omega^2 + \alpha y$.) Therefore $A$ and $B$ must be constants (actually $h_0$ now is the initial unperturbed solution) and the equation \eqref{diff2sol} have the form of
+\begin{equation}
+\begin{aligned}
+(\partial_\xi^2 + \omega^2) h_1(\xi,\eta) = - y (\xi)B\sin(\omega\xi) -  y(\xi)A \cos(\omega\xi) \label{diff2sol2}
+\end{aligned}
+\end{equation}
+We assume the ansatz
+\begin{equation}
+h_1 = C(\eta)D(\xi)\,,
+\end{equation}
+and substituting it into eq.\eqref{diff2sol2} leads to the differential equation
+\begin{equation}
+\begin{aligned}
+C(\eta)(\partial_\xi^2 + \omega^2) D(\xi) = -Ay(\xi)\cos(\omega\xi) -B  y (\xi)\sin(\omega\xi)\,. \label{diff2sol3}
+\end{aligned}
+\end{equation}
+Obviously $C(\eta) = \mathrm{const}$. The solution to eq.\eqref{diff2sol3} also depends on the concrete form of $y(\xi)$. We treat the $y(\xi)$ nearly as a constant here and $h_1$ is a resonant solution
+\begin{align}
+h_1 = CD(\xi) = \frac{-Ay(\xi)\omega\xi\sin(\omega\xi) + By(\xi)\omega\xi\cos(\omega\xi)}{2\omega^2}\,. \label{sol}
+\end{align}
+If the constant condition is not satisfied, one should 
+exactly solve the equation
+\begin{equation}
+\begin{aligned}
+\frac{d^2}{d^2\xi}h_1(\xi) + \omega^2 h_1(\xi) = -Ay(\xi)\cos(\omega\xi) -B  y (\xi)\sin(\omega\xi)\,, \label{desfirorddiffeq}
+\end{aligned}
+\end{equation}
+but for a very large $\xi$($=z$), the resonant result, namely eq.\eqref{sol}, \textcolor{red}{must be dominated ?????}. Finally combining with eq.\eqref{h0} and \eqref{sol} the solution to $h$ is
+\begin{equation}
+h = h_0 + \alpha h_1 = A\cos(\omega z) + B\sin(\omega z) + \alpha \frac{-Ay(z)\omega z\sin(\omega z) + By(z)\omega z\cos(\omega z)}{2\omega^2}\,.
+\end{equation}
+One can check that this solution is equivalent to 
+\begin{align}
+h = A \cos[\sqrt{\omega^2 + \alpha y(z)} z] + B \sin[\sqrt{\omega^2 + \alpha y(z)} z]\,,
+\end{align}
+for a small $\alpha$ expansion to leading order. This implies that the approximate solution is based on the requirement that $y(z)$ could be regarded as a constant or varies slowly during propagation. $H$ is
+\begin{equation}
+\begin{aligned}
+H(z) = & \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} h(z) \\
+= & \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} \times \bigg[A \cos(\sqrt{\omega^2 + \alpha y(z)} z) + B \sin(\sqrt{\omega^2 + \alpha y(z)} z) \bigg] \\
+= & \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} \times \bigg\{\tilde{A} \exp\bigg[i\sqrt{\omega^2 + \alpha y(z)} z\bigg] + \tilde{B} \exp\bigg[-i\sqrt{\omega^2 + \alpha y(z)} z\bigg] \bigg\} \,, \label{finalsol}
+\end{aligned}
+\end{equation}
+where the coefficients $\tilde{A}$ and $\tilde{B}$ are determined by initial conditions or boundary conditions. 
+
+1) If $z$ is the spatial coordinate and the initial condition is a in-going wave, at the source position, we can derive $A$ and $B$ for $\alpha=0$ via
+\begin{equation}
+h_0 = \mathcal{A} e^{i\omega z}\,,
+\end{equation}
+giving
+\begin{equation}
+\tilde{A} = \mathcal{A}\,,~~\tilde{B} = 0\,.
+\end{equation}
+Substituting them into eq.\eqref{finalsol}, we obtain
+\begin{equation}
+\begin{aligned}
+H = & \mathcal{A} \exp\bigg[i\sqrt{\omega^2 + \alpha y(z)} z\bigg] \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} \\
+= & \mathcal{A} \exp\bigg[i\omega z + i z\frac{\alpha y(z)}{2\omega} \bigg] \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} \,.
+\label{sptsol}
+\end{aligned}
+\end{equation}
+
+2) If $z$ is the time coordinate and the initial condition is a in-going wave, at the source position, we can derive $A$ and $B$ via
+\begin{equation}
+h_0 = \mathcal{A} e^{-i\omega t}\,,
+\end{equation}
+where we replace symbol $z$ as $t$. This condition gives 
+\begin{align}
+\tilde{B} = \mathcal{A}\,,~~\tilde{A} = 0\,.
+\end{align}
+Substituting them into eq.\eqref{finalsol}, we obtain
+\begin{equation}
+\begin{aligned}
+H = & \mathcal{A} \exp\bigg[-i\sqrt{\omega^2 + \alpha y(t)} t\bigg] \exp\bigg\{ \frac{1}{2}\alpha [g(t_1)-g(t)] \bigg\} \\
+= & \mathcal{A} \exp\bigg[-i\omega t - i t\frac{\alpha y(t)}{2\omega} \bigg] \exp\bigg\{ \frac{1}{2}\alpha [g(t_1)-g(t)] \bigg\} \,.
+\label{lapsol}
+\end{aligned}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+\bibliography{reference}
+
+\end{document}
+
+
