@@ -14,6 +14,10 @@
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
 \usepackage{hyperref}
+\usepackage{verbatim}
+
+\def\d{\mathrm{d}}
+\def\p{\partial}
 
 \begin{document}
 
@@ -32,7 +36,7 @@ CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chi
              %  but any date may be explicitly specified
 
 \begin{abstract}
-In this note, I give the effect of a varying gravitational constant on the gravitational waves (GWs) during propagation, which finally gives a very simple amplitude modification $\sqrt{\frac{G^{(o)}}{G^{(s)}}}$ and a phase correction proportional to $\partial_t\ln G$ ($\nabla^2 \ln G$) and $1/\omega$ for observation position.
+In this note, we give the effect of a varying gravitational constant $G$ on the gravitational waves (GWs) during propagation, which finally gives a very simple amplitude modification $\sqrt{\frac{G^{(o)}}{G^{(s)}}}$ and a phase correction proportional to ${\partial_t^2}\ln G$ ($\nabla^2 \ln G$) and $1/\omega$ for observation position.
 %
 \end{abstract}
 
@@ -59,26 +63,27 @@ In the Lorentz gauge of transverse trace variable $\bar{h}_{ab} = h_{ab} - \frac
 S = & \frac{1}{64 \pi} \int d^4 x~\phi \left( -\partial_a\bar{h}_{bc}\partial^a\bar{h}^{bc} + \frac{1}{2}\partial_c\bar{h}\partial^c\bar{h} \right)
 \end{aligned}
 \end{equation}
-The equation of motion for this action becomes
+The equation of motion (EOM) for this action becomes
 \begin{align}
-\square \tilde{h}_{ab} + \partial_c\tilde{h}_{ab}\partial^c\ln\phi = 0 \label{fereom}
+\square h_{ab} + \partial_ch_{ab}\partial^c\ln\phi = 0 \label{fereom}
 \end{align}
-where $\tilde{h}_{ab} = \bar{h}_{ab} - \frac{1}{2} \eta_{ab}\bar{h}$. We separate the variable as $\tilde{h}_{ab} = H_{ab}e^{-i\omega t}$
+where $h_{ab} = \bar{h}_{ab} - \frac{1}{2} \eta_{ab}\bar{h}$. We separate the variable as $h_{ab} = H_{ab}e^{-i\omega t}$
 \begin{equation}
 \begin{aligned}
 \nabla^2 H_{ab} + \omega^2 H_{ab} + i\omega \partial_t\ln \phi H_{ab} + \delta^{ij} \partial_j\ln \phi \partial_iH_{ab} = 0
 \end{aligned}
 \end{equation}
-If the GW travels along $z$-axis in a transverse-traceless gauge, $H_{ij} = H_{ij}(z)$ and the equation becomes
+If the GW travels along $z$-axis in a transverse-traceless (TT) gauge, $H_{ij} = H_{ij}(z)$ and the equation becomes
 \begin{align}
 \partial_z^2 H_{ij} + \omega^2 H_{ij} + i\omega \partial_t\ln \phi H_{ij} + \partial_z\ln \phi \partial_zH_{ij} = 0 \label{ferorg}
 \end{align}
 Furthermore, if $\phi = \phi(\vec{r})$, the expression eq.\eqref{ferorg} is solvable
 \begin{equation}
 \begin{aligned}
-\partial_z^2 H_{ij} + \partial_z \ln\phi \partial_z H_{ij} + \omega^2 H_{ij} = 0 \,,
+\partial_z^2 H_{ij} + \partial_z \ln\phi\,\partial_z H_{ij} + \omega^2 H_{ij} = 0 \,,
 \end{aligned}
 \end{equation}
+\begin{comment}
 giving rise to, in terms of eq.\eqref{sptsol} in Appendix \ref{sec:appa} with $y(z) = -\frac{1}{2}\partial_z^2g(z)$, $g(z) = \ln\phi$,
 \begin{equation}
 \begin{aligned}
@@ -132,11 +137,12 @@ h^{(o)}_{ab}(\omega) = &  \sqrt{\frac{G_o}{G_s}}\exp\bigg[\frac{\alpha}{8\omega^
 = & \sqrt{\frac{G_o}{G_s}}\exp\bigg[-\frac{\partial_z^2 \ln G_o}{8\lambda^2} \bigg] \exp\bigg[- i k z\frac{\alpha e^{-z/\lambda}}{4\omega^2\lambda^2} \bigg] h_{ab}^{(s)}(\omega) \,.
 \end{aligned}
 \end{equation}
-
-If $\phi = \phi(t)$, the new variable $\tilde{h}_{ij} = C_{ij}e^{ikz}H(t)$ obeys the relation from eq.\eqref{fereom}
+\end{comment}
+If $\phi = \phi(t)$, the new variable $h_{ij} = C_{ij}e^{ikz}H(t)$ obeys the relation from eq.\eqref{fereom}
 \begin{align}
-\partial_t^2 H + k^2H + \partial_t\ln\phi \partial_t H = 0
+\partial_t^2 H + \partial_t\ln\phi \,\partial_t H  + k^2H= 0
 \end{align}
+\begin{comment}
 This, in terms of eq.\eqref{lapsol} with $y(t) = -\frac{1}{2}\partial_t^2g(t)$, $g(t) = -\ln G$, also makes the GW having the following relation during propagation
 \begin{equation}
 \begin{aligned}
@@ -149,7 +155,7 @@ We expect an dispersion relation $\omega = k + \varepsilon k^{(1)}$ both in eq.\
 \omega = & k - \frac{\partial_t^2\ln G_o}{4k}\,.
 \end{align}
 in eq.\eqref{fersptsol} and eq.\eqref{ferlapsol} respectively. The phase corrections in eq.\eqref{fersptsol} and \eqref{ferlapsol} are obvious depending on the second order derivative and proportional to $1/\omega$, while the amplitude correction depends on a factor $\sqrt{G_o/G_s}$.
-
+\end{comment}
 
 \section{Action method for Einstein-Hilbert action}
 Using the \textit{xAct} module in Mathematica, we expand the Lagrangian of Einstein-Hilbert action up to second order
@@ -224,19 +230,19 @@ We then separate the variables as $\bar{h}_{ij} = H_{ij}e^{-i\omega t}$ so the s
 \nabla^2H_{ij} + \bigg[ \omega^2 + \frac{2}{\phi}\nabla^2 \phi\bigg]H_{ij} + \partial^k \ln\phi \partial_k H_{ij} + 4\partial^k \ln\phi\partial_j H_{ik} = 0
 \end{aligned}
 \end{equation}
-Because the GW travels along $z$-axi, the $H_{ij}$ is the function of $z$ only
+Because the GW travels along $z$-axis, the $H_{ij}$ is the function of $z$ only,
 \begin{equation}
 \begin{aligned}
-\nabla^2 H_{ij} + \bigg[ \omega^2 + \frac{2}{\phi}\nabla^2 \phi \bigg]H_{ij} + \partial^z \ln\phi \partial_z H_{ij} + 4\delta^z_j\partial^k \ln\phi\partial_z H_{ik} = 0
+    \partial_z^2 H_{ij} + \bigg[ \omega^2 + \frac{2}{\phi}\partial_z^2 \phi \bigg]H_{ij} + \partial_z \ln\phi \partial_z H_{ij} + 4\delta^z_j\partial^k \ln\phi\partial_z H_{ik} = 0
 \end{aligned}
 \end{equation}
 In TT gauge, $H_{ij}$ furthermore only has $x,y$ components so the equations become
 \begin{equation}
 \begin{aligned}
-\nabla^2 h + \bigg[ \omega^2 + \frac{2}{\phi}\nabla^2 \phi \bigg]h + \partial^z \ln\phi \partial_z h = 0 \label{desspteq1}
+    \partial_z^2 h+ \partial_z \ln\phi\,\partial_z h + \bigg[ \omega^2 + \frac{2}{\phi}\partial_z^2 \phi \bigg]h  = 0 \label{desspteq1}
 \end{aligned}
 \end{equation}
-where $h$ represents $h_+$ or $h_\times$. Approximately, this system has a frequency shift $\frac{1}{\omega\phi}\nabla^2\phi$. This equation has the same form to the eq.\eqref{dessoleq} with $f(z) = \frac{2}{\phi}\nabla^2 \phi \approx 2\nabla^2\ln \phi$, $g(z) = \ln\phi$. Therefore the forward wave solution to eq.\eqref{desspteq1} is
+where $h$ represents $h_+$ or $h_\times$. Approximately, this system has a frequency shift $\frac{1}{\omega\phi}\partial_z^2\phi$.\begin{comment} This equation has the same form to the eq.\eqref{dessoleq} with $f(z) = \frac{2}{\phi}\nabla^2 \phi \approx 2\nabla^2\ln \phi$, $g(z) = \ln\phi$. Therefore the forward wave solution to eq.\eqref{desspteq1} is
 \begin{equation}
 \begin{aligned}
 h^{(o)}_{ab}(\omega) = & \sqrt{\frac{G_o}{G_s}} \exp\bigg[iz \frac{ 4\nabla^2\ln \phi -\partial_z^2 \ln\phi}{4\omega} \bigg] h_{ab}^{(s)}(\omega) \\
@@ -289,7 +295,7 @@ h^{(o)}_{ab}(\omega) = & \sqrt{\frac{G_o}{G_s}} \exp\bigg[ \frac{\alpha e^{-z/\l
 = & \sqrt{\frac{G_o}{G_s}} \exp\bigg[ -\frac{1}{4\omega^2} \bigg(2\nabla^2\ln G - \frac{1}{2}\partial_z^2\ln G\bigg)  \bigg] \exp\bigg[ i \frac{\alpha e^{-z/\lambda}}{\omega\lambda} \bigg(1 - \frac{3z}{4\lambda} \bigg) \bigg] h_{ab}^{(s)}(\omega) \,.
 \end{aligned}
 \end{equation}
-
+\end{comment}
 
 
 If the dependence becomes $\phi = \phi(t)$, the EOM becomes
@@ -301,9 +307,10 @@ If the dependence becomes $\phi = \phi(t)$, the EOM becomes
 or after variable separation $\bar{h}_{ij} = C_{ij}e^{ikz}H(t)$
 \begin{equation}
 \begin{aligned}
-\partial_t^2H + \partial_t\ln\phi \partial_tH + (k^2 + 2\partial_t^2\ln\phi) H = 0
+\partial_t^2H + \partial_t\ln\phi\,\partial_tH + \left[k^2 + \frac{2}{\phi}\partial_t^2 \phi\right] H = 0
 \end{aligned}
 \end{equation}
+\begin{comment}
 This, in terms of eq.\eqref{lapsol} with $y(t) = 2\partial_t^2\phi - \frac{1}{2}\partial_t^2\ln\phi = \frac{3}{2}\partial_t^2\ln\phi = -\frac{3}{2}\partial_t^2\ln G$, $g(t) = -\ln G$, also makes the forward GW having the following relation during propagation
 \begin{equation}
 \begin{aligned}
@@ -320,15 +327,93 @@ in eq.\eqref{ehsptsol} and eq.\eqref{ehlapsol} respectively. These dispersion re
 |\nabla^2\ln G| < \frac{16\pi^2}{3} f^2 \Delta c\,, \\
 |\partial_t^2\ln G| < \frac{16\pi^2}{3} f^2 \Delta c\,.
 \end{align}
-
+\end{comment}
 
 \section{Appendix A: Solving wave equation}
 \label{sec:appa}
 In this appendix, we solve the wave equation. By expressing $h_{ij}$ as a Fourier transform, the
-wave equation for each Fourier amplitude becomes the following general form
+wave equation for each Fourier amplitude becomes the following general linear form
+\begin{equation}
+    \frac{d^2}{d z^2}H(z)+2p(z)\frac{d}{d z}H(z)+\left[\omega^2+q(z)\right]H(z)=0.\label{dessoleq}
+\end{equation}
+
+For any $H(z)$, there are real function $A(z)$ and $\Phi(z)$ which satisfy
+\begin{equation}\label{HAphi}
+    H=Ae^{i\Phi}.
+\end{equation}
+We plug eq.\eqref{HAphi} into eq.\eqref{dessoleq} and then divide both sides of the equation by $e^{i\Phi}$. From the real and imaginary part of the result, we achieve two equations,
+\begin{equation}\label{rpart}
+    \frac{d^2 A}{d z^2}+2p\frac{d A}{d z}+\left[\omega^2\left(1-\frac{k^2}{\omega^2}\right)+q\right]A=0,
+\end{equation}
+\begin{equation}\label{ipart}
+    2\frac{d A}{d z}k+A\frac{d k}{d z}+2pAk=0,
+\end{equation}
+where $k=\frac{d \Phi}{d z}$. It is no matter for us to suppose that $A>0$ and $k>0$, and then
+\begin{equation}
+    2\frac{1}{A}\frac{d A}{d z}+\frac{1}{k}\frac{d k}{d z}+2p=0,
+\end{equation}
+therefore
+\begin{equation}\label{Apk}
+    A\propto e^{-\int p\,dz}k^{-1/2}.
+\end{equation}
+We plug eq.\eqref{Apk} into eq.\eqref{rpart} and then achieve
+\begin{equation}
+    \frac{d^2 K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)K+\omega^2K(1-K^{-4})=0,
+\end{equation}
+where $\Gamma=e^{\int p \,dz}$ and $K=(k/\omega)^{-1/2}$.
+
+We suppose that $K=1+\Delta K$, where we speculate that $\Delta K$ is a small amount, and then
+\begin{comment}
+\begin{equation}
+    \frac{d^2 \Delta K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)(1+\Delta K)+\omega^2(1+\Delta K)\sum_{n=1}^{\infty}(-1)^{n+1}\frac{(n+3)!}{n!3!}{(\Delta K)}^n=0.
+\end{equation}
+\end{comment}
+\begin{comment}
+\begin{equation}
+    \frac{d^2 \Delta K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)(1+\Delta K)+\omega^2(1+\Delta K)\sum_{n=0}^{\infty}(-1)^{n+1}C^3_{n+3}{(\Delta K)}^n=0,
+\end{equation}
+\end{comment}
+\begin{comment}
+\begin{equation}
+    \frac{d^2 \Delta K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)(1+\Delta K)+\omega^2[4\Delta K+\sum_{n=1}^{\infty}((-1)^{n+1}(C^3_{n+3}-C^3_{n+4})){(\Delta K)}^{n+1}]=0.
+\end{equation}
+\end{comment}
+\begin{equation}
+    \frac{d^2 \Delta K}{d z^2}-\Xi(1+\Delta K)+\omega^2\left[4\Delta K+\sum_{n=2}^{\infty}(-1)^{n+1}C^2_{n+2}{\Delta K}^{n}\right]=0,
+\end{equation}
+where $\Xi=\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q$. 
+If we neglect the higher order terms, then
+\begin{equation}\label{DKoscillation}
+    \frac{d^2 \Delta K}{d z^2}+(2\omega)^2\Delta K=\Xi.
+\end{equation}
+Solved eq.\eqref{DKoscillation} by using constant variation method, we achieve
+\begin{equation}
+    \Delta K=\left[\Delta K|_{z=0}-\int_{0}^z\frac{\Xi\sin(2\omega z)}{2\omega}\,d z\right]\cos(2\omega z)+\left[\frac{1}{2\omega}\frac{d \Delta K}{d z}|_{z=0}+\int_{0}^z\frac{\Xi\cos(2\omega z)}{2\omega}\,d z\right]\sin(2\omega z).
+\end{equation}
+We only need some particular solution, therefore we make $\Delta K|_{z=0}=0$ and $\frac{d \Delta K}{d z}|_{z=0}=0$, and then
+\begin{equation}
+    \Delta K=-\left[\int_{0}^z\frac{\Xi\sin(2\omega z)}{2\omega}\,d z\right]\cos(2\omega z)+\left[\int_{0}^z\frac{\Xi\cos(2\omega z)}{2\omega}\,d z\right]\sin(2\omega z),
+\end{equation}
+which means
+\begin{equation}
+    \Delta K=\frac{\Xi}{(2\omega)^2}[1-\cos(2\omega z)]+\left[\int_{0}^z\frac{\frac{d\Xi}{d z}\cos(2\omega z)}{(2\omega)^2}\,d z\right]\cos(2\omega z)+\left[\int_{0}^z\frac{\frac{d\Xi}{d z}\sin(2\omega z)}{(2\omega)^2}\,d z\right]\sin(2\omega z).
+\end{equation}
+There is
+\begin{equation}
+    \left\lvert \left[\int_{0}^z\frac{\frac{d\Xi}{d z}\cos(2\omega z)}{(2\omega)^2}\,d z\right]\cos(2\omega z)+\left[\int_{0}^z\frac{\frac{d\Xi}{d z}\sin(2\omega z)}{(2\omega)^2}\,d z\right]\sin(2\omega z)\right\rvert \leq 2\int_{0}^z\frac{\left\lvert \frac{d\Xi}{d z}\right\rvert }{(2\omega)^2},
+\end{equation}
+because $\left|\cos(2\omega z)\right|\leq1$ and $\left|\sin(2\omega z)\right|\leq1$. Consequently, if $\left|\Xi(z)\right|\ll(2\omega)^2$ and $\Xi(z)$ has only a few monotonic intervals, we can be sure that $\Delta K$ is truly a small amount. Finally, obviously we can approximate $k$ by $k=\omega(1+\Delta K)^{1/2}\approx \omega(1+\frac{1}{2}\Delta K)$.
+
+\begin{comment}
+\begin{equation}
+    \begin{aligned}
+    \partial_z^2 H  + \alpha\partial_z g(z) \partial_z H + \bigg[ \omega^2 + \alpha f(z) \bigg]H= 0\,.\label{dessoleq}
+    \end{aligned}
+    \end{equation}
+\begin{comment}
 \begin{equation}
 \begin{aligned}
-\partial_z^2 H + \bigg[ \omega^2 + \alpha f(z) \bigg]H + \alpha\partial_z g(z) \partial_z H = 0\,.\label{dessoleq}
+\partial_z^2 H  + \alpha\partial_z g(z) \partial_z H + \bigg[ \omega^2 + \alpha f(z) \bigg]H= 0\,.\label{dessoleq}
 \end{aligned}
 \end{equation}
 We define the variable $h(z)$ through
@@ -461,7 +546,7 @@ H = & \mathcal{A} \exp\bigg[-i\sqrt{\omega^2 + \alpha y(t)} t\bigg] \exp\bigg\{ 
 \label{lapsol}
 \end{aligned}
 \end{equation}
-
+\end{comment}
 
 
 
