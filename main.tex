@@ -332,7 +332,7 @@ in eq.\eqref{ehsptsol} and eq.\eqref{ehlapsol} respectively. These dispersion re
 \section{Appendix A: Solving wave equation}
 \label{sec:appa}
 In this appendix, we solve the wave equation. By expressing $h_{ij}$ as a Fourier transform, the
-wave equation for each Fourier amplitude becomes the following general linear form
+wave equation for each Fourier amplitude becomes the following general linear form,
 \begin{equation}
     \frac{d^2}{d z^2}H(z)+2p(z)\frac{d}{d z}H(z)+\left[\omega^2+q(z)\right]H(z)=0.\label{dessoleq}
 \end{equation}
@@ -357,247 +357,233 @@ therefore
     A\propto e^{-\int p\,dz}k^{-1/2}.
 \end{equation}
 We plug eq.\eqref{Apk} into eq.\eqref{rpart} and then achieve
-\begin{equation}
+\begin{equation}\label{equK0}
     \frac{d^2 K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)K+\omega^2K(1-K^{-4})=0,
 \end{equation}
-where $\Gamma=e^{\int p \,dz}$ and $K=(k/\omega)^{-1/2}$.
+where $\Gamma=e^{\int p \,dz}$ and $K=(k/\omega)^{-1/2}$. If $A=\check{A}$ and $k=+\check{k}$ satisfy eq.\eqref{rpart} and eq.\eqref{ipart}, $A=\check{A}$ and $k=-\check{k}$ will satisfy eq.\eqref{rpart} and eq.\eqref{ipart} as well. This means that since eq.\eqref{dessoleq} is linear, the general solution of eq.\eqref{dessoleq} can be expressed as
+\begin{equation}
+    H=C_+e^{-\int p\,dz}\check{K}e^{+i\omega\int  \check{K}^{-2}\,\d z}+C_-e^{-\int p\,dz}\check{K}e^{-i\omega\int  \check{K}^{-2}\,\d z},
+\end{equation}
+where $\check{K}$ is a particular solution of eq.\eqref{equK0}.
 
-We suppose that $K=1+\Delta K$, where we speculate that $\Delta K$ is a small amount, and then
-\begin{comment}
-\begin{equation}
-    \frac{d^2 \Delta K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)(1+\Delta K)+\omega^2(1+\Delta K)\sum_{n=1}^{\infty}(-1)^{n+1}\frac{(n+3)!}{n!3!}{(\Delta K)}^n=0.
+Now we need to find a particular solution of eq.\eqref{equK0}. We let $\Xi=\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q$ and make $\omega=1$, which means that we are now using natural units where $c=1$ and $\omega=1$, then
+\begin{equation}\label{equK}
+    \frac{d^2 K}{d z^2}+K[(1-\Xi)-K^{-4}]=0.
 \end{equation}
-\end{comment}
-\begin{comment}
-\begin{equation}
-    \frac{d^2 \Delta K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)(1+\Delta K)+\omega^2(1+\Delta K)\sum_{n=0}^{\infty}(-1)^{n+1}C^3_{n+3}{(\Delta K)}^n=0,
-\end{equation}
-\end{comment}
-\begin{comment}
-\begin{equation}
-    \frac{d^2 \Delta K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)(1+\Delta K)+\omega^2[4\Delta K+\sum_{n=1}^{\infty}((-1)^{n+1}(C^3_{n+3}-C^3_{n+4})){(\Delta K)}^{n+1}]=0.
-\end{equation}
-\end{comment}
-\begin{equation}
-    \frac{d^2 \Delta K}{d z^2}-\Xi(1+\Delta K)+\omega^2\left[4\Delta K+\sum_{n=2}^{\infty}(-1)^{n+1}C^2_{n+2}{\Delta K}^n\right]=0,
-\end{equation}
-where $\Xi=\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q$. 
-If we neglect the higher order terms, then
-\begin{equation}\label{DKoscillation}
-    \frac{d^2 \Delta K}{d z^2}+(2\omega)^2\Delta K=\Xi.
-\end{equation}
-Solved eq.\eqref{DKoscillation} by using constant variation method, we achieve
-\begin{equation}
-    \Delta K=\left[\Delta K|_{z=0}-\int_{0}^z\frac{\Xi\sin(2\omega z)}{2\omega}\,d z\right]\cos(2\omega z)+\left[\frac{1}{2\omega}\frac{d \Delta K}{d z}|_{z=0}+\int_{0}^z\frac{\Xi\cos(2\omega z)}{2\omega}\,d z\right]\sin(2\omega z).
-\end{equation}
-We only need some particular solutions, because eq.\eqref{dessoleq} is linear. We make $\Delta K|_{z=0}=0$ and $\frac{d \Delta K}{d z}|_{z=0}=0$, and then
-\begin{equation}
-    \Delta K=-\left[\int_{0}^z\frac{\Xi\sin(2\omega z)}{2\omega}\,d z\right]\cos(2\omega z)+\left[\int_{0}^z\frac{\Xi\cos(2\omega z)}{2\omega}\,d z\right]\sin(2\omega z),
+If $\Xi=\text{const}$, it is easy to find a particular solution
+\begin{equation}\label{K0}
+    K=(1-\Xi)^{-1/4}=1+\frac{1}{4}\Xi+\frac{5}{32}\Xi^2+O(\Xi^3),
 \end{equation}
 which means
 \begin{equation}
-    \Delta K=\frac{\Xi}{(2\omega)^2}[1-\cos(2\omega z)]-\left[\int_{0}^z\frac{\frac{d\Xi}{d z}\cos(2\omega z)}{(2\omega)^2}\,d z\right]\cos(2\omega z)-\left[\int_{0}^z\frac{\frac{d\Xi}{d z}\sin(2\omega z)}{(2\omega)^2}\,d z\right]\sin(2\omega z).
+    k=(1-\Xi)^{1/2}=1-\frac{1}{2}\Xi-\frac{1}{8}\Xi^2+O(\Xi^3),
 \end{equation}
-There is
+and this is similar to which of damped oscillations. If $\Xi\neq\text{const}$, we are interested in a special situation that $\Xi(z)=\kappa^2\tilde{\Xi}(\tilde{z})$, where $\tilde{z}=\kappa z$ and $\kappa$ is a small amount. In this situation,
+\begin{equation}\label{equKs}
+    K^3\frac{d^2 K}{d \tilde{z}^2}\kappa^2-K^4\tilde{\Xi}(\tilde{z})\kappa^2+K^4-1=0.
+\end{equation}
+We suppose that
+\begin{equation}\label{K}
+    K=\sum_{n=0}^\infty K_n(\tilde{z})\kappa^{2n},
+\end{equation}
+and if we plug eq.\eqref{K} into eq.\eqref{equKs}, we will maintain a power series of $\kappa^2$ which is equal to $0$. We make each of the coefficients of this power series equal to $0$, for example,
 \begin{equation}
-    \left\lvert \left[\int_{0}^z\frac{\frac{d\Xi}{d z}\cos(2\omega z)}{(2\omega)^2}\,d z\right]\cos(2\omega z)+\left[\int_{0}^z\frac{\frac{d\Xi}{d z}\sin(2\omega z)}{(2\omega)^2}\,d z\right]\sin(2\omega z)\right\rvert \leq 2\int_{0}^z\frac{\left\lvert \frac{d\Xi}{d z}\right\rvert }{(2\omega)^2},
+    K_0^4-1=0,
 \end{equation}
-because $\left|\cos(2\omega z)\right|\leq1$ and $\left|\sin(2\omega z)\right|\leq1$. Consequently, if $\left|\Xi(z)\right|\ll(2\omega)^2$ and $\Xi(z)$ has only a few monotonic intervals, we can be sure that this approximate solution is truly a small amount. Finally, obviously we can approximate $k$ by $k=\omega(1+\Delta K)^{-2}\approx \omega(1-2\Delta K)$.
+\begin{equation}
+    K_0^3K_0''-K_0^4\tilde{\Xi}+4K_0^3K_1=0,
+\end{equation}
+\begin{equation}
+    (K_0^3K_1''+3K_0^2K_1K_0'')-4K_0^3K_1\tilde{\Xi}+(4K_0^3K_2+6K_0^2K_1^2)=0.
+\end{equation}
+Finally, by solving all of these equations in order, we will find each of the coefficients in eq.\eqref{K}, for example,
+\begin{equation}
+    K_0=1,
+\end{equation}
+\begin{equation}
+    K_1=\frac{1}{4}\tilde{\Xi},
+\end{equation}
+\begin{equation}
+    K_2=\frac{5}{32}\tilde{\Xi}^2-\frac{1}{16}\frac{d^2\tilde{\Xi}}{d\tilde{z}^2},
+\end{equation}
+and these coefficients will make our particular solution of $K$ similar to eq.\eqref{K0}.
 
 \begin{comment}
 \begin{equation}
-    H=C_+e^{-pz}e^{+i\omega\sqrt{1-(\frac{p}{\omega})^2}z}+C_-e^{-pz}e^{-i\omega\sqrt{1-(\frac{p}{\omega})^2}z}
+    4K_0^3K_1\kappa=0
 \end{equation}
 \begin{equation}
-    H|_{z=0}=C_++C_-=1
+    K_1=0
 \end{equation}
 \begin{equation}
-    \frac{d H}{d z}|_{z=0}=C_+(-p+i\omega\sqrt{1-(\frac{p}{\omega})^2})+C_-(-p-i\omega\sqrt{1-(\frac{p}{\omega})^2})=i\omega
+    [K_0^3K_0''-K_0^4\tilde{\Xi}(\tilde{z})+(4K_0^3K_2+6K_0^2K_1^2)]\kappa^2=0
 \end{equation}
 \begin{equation}
-    C_\pm=\frac{1}{2}\pm\frac{1-\frac{p}{\omega}i}{2\sqrt{1-(\frac{p}{\omega})^2}}
+    K_2=\frac{1}{4}\tilde{\Xi}(\tilde{z})
 \end{equation}
 \begin{equation}
-    H=(\frac{1}{2}+\frac{1-\frac{p}{\omega}i}{2\sqrt{1-(\frac{p}{\omega})^2}})e^{-pz}(\cos\omega\sqrt{1-(\frac{p}{\omega})^2}z+i\sin\omega\sqrt{1-(\frac{p}{\omega})^2}z)+(\frac{1}{2}-\frac{1-\frac{p}{\omega}i}{2\sqrt{1-(\frac{p}{\omega})^2}})e^{-pz}(\cos\omega\sqrt{1-(\frac{p}{\omega})^2}z-i\sin\omega\sqrt{1-(\frac{p}{\omega})^2}z)
+    [(K_0^3K_1''+3K_0^2K_1K_0)-4K_0^3K_1\Xi(\tilde{z})+(4K_0^3K_3+12K_0^2K_1K_2+4K_0K_1^3)]\kappa^3=0
 \end{equation}
 \begin{equation}
-    H=[e^{-pz}\cos\omega\sqrt{1-(\frac{p}{\omega})^2}z+\frac{\frac{p}{\omega}}{\sqrt{1-(\frac{p}{\omega})^2}}e^{-pz}\sin\omega\sqrt{1-(\frac{p}{\omega})^2}z]+i[\frac{1}{\sqrt{1-(\frac{p}{\omega})^2}}e^{-pz}\sin\omega\sqrt{1-(\frac{p}{\omega})^2}z]
+    K_3=0
+\end{equation}
+
+\begin{equation}
+    K^{3}\frac{d^2 K}{d z^2}+K^{4}[1-\Xi(\frac{z}{l})\frac{1}{l^2}]-1=0
+\end{equation}
+\begin{equation}
+    K=\sum_{n=0}^\infty K_n(\frac{z}{l})\frac{1}{l^n}
+\end{equation}
+\begin{equation}
+    K_0(\frac{z}{l})^4-1=0
+\end{equation}
+\begin{equation}
+    K_0=1
+\end{equation}
+\begin{equation}
+    4K_0(\frac{z}{l})^3K_1(\frac{z}{l})\frac{1}{l}=0
+\end{equation}
+\begin{equation}
+    K_1=0
+\end{equation}
+\begin{equation}
+    K_0(\frac{z}{l})^3K_0''(\frac{z}{l})\frac{1}{l^2}+[4K_0(\frac{z}{l})^3K_2(\frac{z}{l})+6K_0(\frac{z}{l})^2K_1(\frac{z}{l})^2]\frac{1}{l^2}-K_0(\frac{z}{l})^4\Xi(\frac{z}{l})\frac{1}{l^2}=0
+\end{equation}
+\begin{equation}
+    K_2(\frac{z}{l})=\frac{1}{4}\Xi(\frac{z}{l})
+\end{equation}
+\begin{equation}
+    [K_0(\frac{z}{l})^3K_1''(\frac{z}{l})+3K_0(\frac{z}{l})^2K_1(\frac{z}{l})K_0''(\frac{z}{l})]\frac{1}{l^3}+[4K_0(\frac{z}{l})^3K_3(\frac{z}{l})+12K_0(\frac{z}{l})^2K_1(\frac{z}{l})K_2(\frac{z}{l})+4K_0(\frac{z}{l})K_1(\frac{z}{l})^3]\frac{1}{l^3}-4K_0(\frac{z}{l})^3K_1(\frac{z}{l})\Xi(\frac{z}{l})\frac{1}{l^3}=0
+\end{equation}
+\begin{equation}
+    K_3(\frac{z}{l})=0
+\end{equation}
+\begin{equation}
+    [K_0(\frac{z}{l})^3K_2''(\frac{z}{l})+3K_0(\frac{z}{l})^2K_1(\frac{z}{l})K_1''(\frac{z}{l})+[3K_0(\frac{z}{l})K_1(\frac{z}{l})^2+3K_0(\frac{z}{l})^2K_2(\frac{z}{l})]K_0''(\frac{z}{l})]\frac{1}{l^4}+[4K_0(\frac{z}{l})^3K_4(\frac{z}{l})+12K_0(\frac{z}{l})^2K_1(\frac{z}{l})K_3(\frac{z}{l})+6K_0(\frac{z}{l})^2K_2(\frac{z}{l})^2+12K_0(\frac{z}{l})K_1(\frac{z}{l})^2K_2(\frac{z}{l})+K_1(\frac{z}{l})^4]\frac{1}{l^4}-[4K_0(\frac{z}{l})^3K_2(\frac{z}{l})+6K_0(\frac{z}{l})^2K_1(\frac{z}{l})^2]\Xi(\frac{z}{l})\frac{1}{l^4}=0
+\end{equation}
+\begin{equation}
+    [K_2''(\frac{z}{l})]\frac{1}{l^4}+[4K_4(\frac{z}{l})+6K_2(\frac{z}{l})^2]\frac{1}{l^4}-[4K_2(\frac{z}{l})]\Xi(\frac{z}{l})\frac{1}{l^4}=0
+\end{equation}
+\begin{equation}
+    K_2''(\frac{z}{l})+4K_4(\frac{z}{l})-\frac{5}{8}\Xi(\frac{z}{l})^2=0
+\end{equation}
+
+\begin{equation}
+    K=?(1-\Xi)^{-1/4}
+\end{equation}
+\begin{equation}
+    K'=?'(1-\Xi)^{-1/4}+(1/4)?(1-\Xi)^{-5/4}\Xi'
+\end{equation}
+\begin{equation}
+    K''=?''(1-\Xi)^{-1/4}+(1/2)?'(1-\Xi)^{-5/4}\Xi'+(5/16)?(1-\Xi)^{-9/4}(\Xi')^2+(1/4)?(1-\Xi)^{-5/4}\Xi''
+\end{equation}
+\begin{equation}
+    K[(1-\Xi)-K^{-4}]=?(1-\Xi)^{3/4}(1-?^{-4})
+\end{equation}
+
+\begin{equation}
+    (G'/G)^2,\quad G''/G
+\end{equation}
+\begin{equation}
+    G = G_0[1+\alpha(z/\lambda+1) e^{-z/\lambda}]
+\end{equation}
+\begin{equation}
+    G' = (G_0/\lambda)[-\alpha(z/\lambda) e^{-z/\lambda}]
+\end{equation}
+\begin{equation}
+    G'' = (G_0/\lambda^2)[\alpha(z/\lambda-1) e^{-z/\lambda}]
+\end{equation}
+
+\begin{equation}
+    (\phi'/\phi)^2,\quad\phi''/\phi
+\end{equation}
+\begin{equation}
+    \phi=G^{-1}
+\end{equation}
+\begin{equation}
+    \phi'=-G^{-2}G'
+\end{equation}
+\begin{equation}
+    \phi'=2G^{-3}(G')^2-G^{-2}G''
+\end{equation}
+
+\begin{equation}
+    p=\frac{1}{2}\frac{\d}{\d z}\ln\phi
+\end{equation}
+\begin{equation}
+    \Gamma=(\phi/\phi_0)^{1/2}
+\end{equation}
+\begin{equation}
+    \Gamma'=\frac{1}{2}(\phi/\phi_0)^{-1/2}(\phi'/\phi_0)
+\end{equation}
+\begin{equation}
+    \Gamma''=-\frac{1}{4}(\phi/\phi_0)^{-3/2}(\phi'/\phi_0)^2+\frac{1}{2}(\phi/\phi_0)^{-1/2}(\phi''/\phi_0)
+\end{equation}
+\begin{equation}
+    \Gamma''/\Gamma=-\frac{1}{4}(\phi/\phi_0)^{-2}(\phi'/\phi_0)^2+\frac{1}{2}(\phi/\phi_0)^{-1}(\phi''/\phi_0)
+\end{equation}
+\begin{equation}
+    q=2\phi''/\phi
+\end{equation}
+
+\begin{equation}
+    G = G_0[1+\alpha(z/\lambda+1) e^{-z/\lambda}]
+\end{equation}
+\begin{equation}
+    G' = (G_0/\lambda)[-\alpha(z/\lambda) e^{-z/\lambda}]
+\end{equation}
+\begin{equation}
+    G'' = (G_0/\lambda^2)[\alpha(z/\lambda-1) e^{-z/\lambda}]
+\end{equation}
+\begin{equation}
+    p=-\frac{1}{2}\frac{\d}{\d z}\ln G
+\end{equation}
+\begin{equation}
+    \Gamma=e^{\int p \,\d z}=e^{\int -\frac{1}{2}\frac{\d}{\d z}\ln G \,\d z}=e^{ -\frac{1}{2}\ln(G/G_0)}=(G/G_0)^{-\frac{1}{2}}
+\end{equation}
+\begin{equation}
+    \Gamma'=-\frac{1}{2}(G/G_0)^{-\frac{3}{2}}(G'/G_0)
+\end{equation}
+\begin{equation}
+    \Gamma''=\frac{3}{4}(G/G_0)^{-\frac{5}{2}}(G'/G_0)^2-\frac{1}{2}(G/G_0)^{-\frac{3}{2}}(G''/G_0)
+\end{equation}
+\begin{equation}
+    \Gamma''/\Gamma=\frac{3}{4}(G/G_0)^{-2}(G'/G_0)^2-\frac{1}{2}(G/G_0)^{-1}(G''/G_0)
+\end{equation}
+\begin{equation}
+    \frac{3}{4}\frac{[\alpha(z/\lambda) e^{-z/\lambda}]^2}{[1+\alpha(z/\lambda+1) e^{-z/\lambda}]^2}-\frac{1}{2}\frac{\alpha(z/\lambda-1) e^{-z/\lambda}}{1+\alpha(z/\lambda+1) e^{-z/\lambda}}
+\end{equation}
+
+\begin{equation}
+    \frac{d^2 K}{d z^2}+\omega^2K(1-\frac{\Xi}{\omega^2}-K^{-4})=0
+\end{equation}
+\begin{equation}
+    K = (1-\frac{\Xi}{\omega^2})^{-1/4}
+\end{equation}
+
+\begin{equation}
+    \frac{d^2 \Delta K}{d z^2}+\omega^2(1+\Delta K)[4\Delta K+\sum_{n=2}^{\infty}(-1)^{n+1}C^2_{n+2}{\Delta K}^n-\frac{\Xi}{\omega^2}]=0
+\end{equation}
+\begin{equation}
+    \frac{d^2 \Delta K}{d z^2}+\omega^2[4\Delta K-\frac{\Xi}{\omega^2}]=0
+\end{equation}
+\begin{equation}
+    \Delta K=\frac{\Xi}{4\omega^2}
+\end{equation}
+
+\begin{equation}
+    \Delta K=\left[\Delta K|_{z=0}-\int_{0}^z\frac{\Xi\sin(2\omega z)}{2\omega}\,d z\right]\cos(2\omega z)+\left[\frac{1}{2\omega}\frac{d \Delta K}{d z}|_{z=0}+\int_{0}^z\frac{\Xi\cos(2\omega z)}{2\omega}\,d z\right]\sin(2\omega z)
+\end{equation}
+\begin{equation}
+    \Delta K=-\left[\int_{0}^z\frac{\Xi\sin(2\omega z)}{2\omega}\,d z\right]\cos(2\omega z)+\left[\int_{0}^z\frac{\Xi\cos(2\omega z)}{2\omega}\,d z\right]\sin(2\omega z)
+\end{equation}
+\begin{equation}
+    \Delta K=\frac{\Xi}{(2\omega)^2}[1-\cos(2\omega z)]-\left[\int_{0}^z\frac{\frac{d\Xi}{d z}\cos(2\omega z)}{(2\omega)^2}\,d z\right]\cos(2\omega z)-\left[\int_{0}^z\frac{\frac{d\Xi}{d z}\sin(2\omega z)}{(2\omega)^2}\,d z\right]\sin(2\omega z)
 \end{equation}
 \end{comment}
-
-\begin{comment}
-Finally, we obtain the general solution of eq.\eqref{dessoleq},
-\begin{equation}
-    H(z)=C_+e^{-\int p dz}Ke^{+i\int \omega K^{-2} dz}+C_-e^{-\int p dz}Ke^{-i\int \omega K^{-2} dz}.
-\end{equation}
-If $H(z)$ is real function, it will be
-\begin{equation}
-    H(z)=C_\text{c}e^{-\int p dz}K\cos(\int \omega K^{-2} dz)+C_\text{s}e^{-\int p dz}K\sin(\int \omega K^{-2} dz).
-\end{equation}
-\end{comment}
-
-\begin{comment}
-Finally, obviously we can approximate $k$ by $k=\omega(1+\Delta K)^{-2}\approx \omega(1-2\Delta K)$.
-
-\begin{equation}
-    H=C_+e^{-pz}e^{+i\omega\sqrt{1-(\frac{p}{\omega})^2}z}+C_-e^{-pz}e^{-i\omega\sqrt{1-(\frac{p}{\omega})^2}z}
-\end{equation}
-\end{comment}
-
-\begin{comment}
-\begin{equation}
-    \begin{aligned}
-    \partial_z^2 H  + \alpha\partial_z g(z) \partial_z H + \bigg[ \omega^2 + \alpha f(z) \bigg]H= 0\,.\label{dessoleq}
-    \end{aligned}
-    \end{equation}
-\begin{comment}
-\begin{equation}
-\begin{aligned}
-\partial_z^2 H  + \alpha\partial_z g(z) \partial_z H + \bigg[ \omega^2 + \alpha f(z) \bigg]H= 0\,.\label{dessoleq}
-\end{aligned}
-\end{equation}
-We define the variable $h(z)$ through
-\begin{align}
-H(z) = \exp\bigg[-\frac{1}{2}\alpha\int \partial_zg(z)dz  \bigg]h(z) = \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} h(z) 
-\end{align}
-and we have the new equation for $h(z)$
-\begin{equation}
-\begin{aligned}
-\ddot{h}(z) + \bigg\{ \omega^2 + \alpha[f(z) - \frac{1}{2}\partial_z^2g(z)] + \frac{1}{4}\alpha^2[\partial_zg(z)]^2 \bigg\} h(z) = 0
-\end{aligned}
-\end{equation}
-Since we only want to see the leading order, we
-rewrite the equation as
-\begin{equation}
-\begin{aligned}
-\ddot{h}(z) + \big[ \omega^2 + \alpha y(z) \big] h(z) = 0\,,~~y(z) = f(z) - \frac{1}{2}\partial_z^2g(z)\,.  \label{heq}
-\end{aligned}
-\end{equation}
-We solve the equation \eqref{heq} by the two variable expansion method treating the $h(z)$ as a function of the two independent variables $(\xi,\eta)$ so that the derivative respect to $z$ become 
-\begin{equation}
-\frac{d}{dz} = \frac{\partial}{\partial \xi} + \alpha \frac{\partial}{\partial \eta}
-\end{equation}
-We expand $h$ and the terms in eq.\eqref{heq}
-\begin{align*}
-& h(\xi,\eta) = h_0(\xi,\eta) + \alpha h_1(\xi,\eta) + \cdots \\
-& \partial_z^2 h(\xi,\eta) = \partial_\xi^2 h_0(\xi,\eta) + 2\alpha \partial_\xi\partial_\eta h_0(\xi,\eta) + \alpha \partial_\xi^2 h_1(\xi,\eta) + \alpha^2\frac{\partial^2}{\partial\eta^2}h_0 + 2\alpha^2\partial_\xi\partial_\eta h_1 + \alpha^2\partial_\xi^2 h_2 + \cdots \\
-& (\omega^2 + \alpha y(z)) h(\xi,\eta) = \omega^2 h_0(\xi,\eta) + \alpha\omega^2 h_1(\xi,\eta) + \alpha y(\xi) h_0(\xi,\eta) + \alpha^2y(\xi)h_1(\xi,\eta) + \alpha^2\omega^2 h_2(\xi,\eta) + \cdots \,,
-\end{align*}
-which gives rise to three differential equations
-\begin{align}
-& (\partial_\xi^2 + \omega^2) h_0(\xi,\eta) = 0 \label{diff1}\,, \\
-& (\partial_\xi^2 + \omega^2) h_1(\xi,\eta) = -2\partial_\xi\partial_\eta h_0(\xi,\eta) - y(\xi)h_0(\xi,\eta)\,. \label{diff2} \\
-& (\partial_\xi^2 + \omega^2) h_2(\xi,\eta) = -2\partial_\xi\partial_\eta h_1(\xi,\eta) - \partial_\eta^2 h_0(\xi,\eta) - y(\xi)h_1(\xi,\eta)
-\end{align}
-The equation \eqref{diff1} gives $h_0$ in the form of
-\begin{equation}
-\begin{aligned}
-h_0 = A(\eta)\cos(\omega\xi) + B(\eta)\sin(\omega\xi) \,, \label{h0}
-\end{aligned}
-\end{equation}
-and putting this into eq.\eqref{diff2} gives
-\begin{equation}
-\begin{aligned}
-(\partial_\xi^2 + \omega^2) h_1(\xi,\eta) = & 2\omega(A'\sin(\omega\xi)-B'\cos(\omega\xi)) - y(\xi)(A\cos(\omega\xi) + B\sin(\omega\xi)) \\
-= & (2\omega A' - y(\xi)B)\sin(\omega\xi) - (2\omega B'+ y(\xi)A)\cos(\omega\xi) \label{diff2sol}
-\end{aligned}
-\end{equation}
-Referring to the method to solve Mathieu equation, the RHS in eq.\eqref{diff2sol} vanishies to solve $A$ and $B$, and we obtain
-\begin{equation}
-\begin{aligned}
-\frac{dA}{d\eta} = \frac{y(\xi)}{2\omega}B\,, ~~ \frac{dB}{d\eta} = - \frac{y(\xi)}{2\omega}A\,,
-\end{aligned}
-\end{equation}
-However the two differential equations of $A$ and $B$ also depend on $y(\xi)$ or variable $\xi$, which breaks the condition that only relies on $\eta$. (If $y(\xi)$ is a constant, it is easy to solve eq.\eqref{heq} by modifying $\tilde{\omega}^2 = \omega^2 + \alpha y$.) Therefore $A$ and $B$ must be constants (actually $h_0$ now is the initial unperturbed solution) and the equation \eqref{diff2sol} have the form of
-\begin{equation}
-\begin{aligned}
-(\partial_\xi^2 + \omega^2) h_1(\xi,\eta) = - y (\xi)B\sin(\omega\xi) -  y(\xi)A \cos(\omega\xi) \label{diff2sol2}
-\end{aligned}
-\end{equation}
-We assume the ansatz
-\begin{equation}
-h_1 = C(\eta)D(\xi)\,,
-\end{equation}
-and substituting it into eq.\eqref{diff2sol2} leads to the differential equation
-\begin{equation}
-\begin{aligned}
-C(\eta)(\partial_\xi^2 + \omega^2) D(\xi) = -Ay(\xi)\cos(\omega\xi) -B  y (\xi)\sin(\omega\xi)\,. \label{diff2sol3}
-\end{aligned}
-\end{equation}
-Obviously $C(\eta) = \mathrm{const}$. The solution to eq.\eqref{diff2sol3} also depends on the concrete form of $y(\xi)$. We treat the $y(\xi)$ nearly as a constant here and $h_1$ is a resonant solution
-\begin{align}
-h_1 = CD(\xi) = \frac{-Ay(\xi)\omega\xi\sin(\omega\xi) + By(\xi)\omega\xi\cos(\omega\xi)}{2\omega^2}\,. \label{sol}
-\end{align}
-If the constant condition is not satisfied, one should 
-exactly solve the equation
-\begin{equation}
-\begin{aligned}
-\frac{d^2}{d^2\xi}h_1(\xi) + \omega^2 h_1(\xi) = -Ay(\xi)\cos(\omega\xi) -B  y (\xi)\sin(\omega\xi)\,, \label{desfirorddiffeq}
-\end{aligned}
-\end{equation}
-but for a very large $\xi$($=z$), the resonant result, namely eq.\eqref{sol}, \textcolor{red}{must be dominated ?????}. Finally combining with eq.\eqref{h0} and \eqref{sol} the solution to $h$ is
-\begin{equation}
-h = h_0 + \alpha h_1 = A\cos(\omega z) + B\sin(\omega z) + \alpha \frac{-Ay(z)\omega z\sin(\omega z) + By(z)\omega z\cos(\omega z)}{2\omega^2}\,.
-\end{equation}
-One can check that this solution is equivalent to 
-\begin{align}
-h = A \cos[\sqrt{\omega^2 + \alpha y(z)} z] + B \sin[\sqrt{\omega^2 + \alpha y(z)} z]\,,
-\end{align}
-for a small $\alpha$ expansion to leading order. This implies that the approximate solution is based on the requirement that $y(z)$ could be regarded as a constant or varies slowly during propagation. $H$ is
-\begin{equation}
-\begin{aligned}
-H(z) = & \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} h(z) \\
-= & \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} \times \bigg[A \cos(\sqrt{\omega^2 + \alpha y(z)} z) + B \sin(\sqrt{\omega^2 + \alpha y(z)} z) \bigg] \\
-= & \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} \times \bigg\{\tilde{A} \exp\bigg[i\sqrt{\omega^2 + \alpha y(z)} z\bigg] + \tilde{B} \exp\bigg[-i\sqrt{\omega^2 + \alpha y(z)} z\bigg] \bigg\} \,, \label{finalsol}
-\end{aligned}
-\end{equation}
-where the coefficients $\tilde{A}$ and $\tilde{B}$ are determined by initial conditions or boundary conditions. 
-
-1) If $z$ is the spatial coordinate and the initial condition is a in-going wave, at the source position, we can derive $A$ and $B$ for $\alpha=0$ via
-\begin{equation}
-h_0 = \mathcal{A} e^{i\omega z}\,,
-\end{equation}
-giving
-\begin{equation}
-\tilde{A} = \mathcal{A}\,,~~\tilde{B} = 0\,.
-\end{equation}
-Substituting them into eq.\eqref{finalsol}, we obtain
-\begin{equation}
-\begin{aligned}
-H = & \mathcal{A} \exp\bigg[i\sqrt{\omega^2 + \alpha y(z)} z\bigg] \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} \\
-= & \mathcal{A} \exp\bigg[i\omega z + i z\frac{\alpha y(z)}{2\omega} \bigg] \exp\bigg\{ \frac{1}{2}\alpha [g(z_1)-g(z)] \bigg\} \,.
-\label{sptsol}
-\end{aligned}
-\end{equation}
-
-2) If $z$ is the time coordinate and the initial condition is a in-going wave, at the source position, we can derive $A$ and $B$ via
-\begin{equation}
-h_0 = \mathcal{A} e^{-i\omega t}\,,
-\end{equation}
-where we replace symbol $z$ as $t$. This condition gives 
-\begin{align}
-\tilde{B} = \mathcal{A}\,,~~\tilde{A} = 0\,.
-\end{align}
-Substituting them into eq.\eqref{finalsol}, we obtain
-\begin{equation}
-\begin{aligned}
-H = & \mathcal{A} \exp\bigg[-i\sqrt{\omega^2 + \alpha y(t)} t\bigg] \exp\bigg\{ \frac{1}{2}\alpha [g(t_1)-g(t)] \bigg\} \\
-= & \mathcal{A} \exp\bigg[-i\omega t - i t\frac{\alpha y(t)}{2\omega} \bigg] \exp\bigg\{ \frac{1}{2}\alpha [g(t_1)-g(t)] \bigg\} \,.
-\label{lapsol}
-\end{aligned}
-\end{equation}
-\end{comment}
-
-
-
-
-
-
 
 
 
 \bibliography{reference}
 
 \end{document}
-
-
