@@ -43,16 +43,16 @@ Department of Astronomy, Beijing Normal University, Beijing 102206, China
              % but any date may be explicitly specified
 
 \begin{abstract}
-In this note, we give the effect of a varying gravitational constant $G$ on the gravitational waves (GWs) during propagation, which finally gives a very simple amplitude modification $\sqrt{\frac{G^{(o)}}{G^{(s)}}}$ and a phase correction proportional to ${\partial_t^2}\ln G$ ($\nabla^2 \ln G$)? and $1/\omega$? for observation position if ?.
+In this note, we give the effect of varying gravitational constant $G$ on  gravitational wave (GW) during propagation. We separately make $G$ in Fierz-Pauli action and Einstein-Hilbert action vary, and then we maintain two modified GW equations with the same form. We then solve the equations for the situation in our interest, and our solution can be easily applied to gravitational constant in Yukawa form when it has minor correction and slow variation.
 \end{abstract}
 
 \keywords{gravitational constant, gravitational waves}
 
 \maketitle
 
-\section{Action method analogous to Electromagnetic Field}
+\section{Action method for Fierz-Pauli action}
 
-The Fierz-Pauli action for the field variable $h_{ab}$ is given by~\cite{roy2020probing}
+The Fierz-Pauli action for the field variable $h_{ab}$ is given by~\cite{Roy2020}
 \begin{equation}
 \begin{aligned}
 S = & \,\frac{1}{64 \pi G} \int d^4 x\left(-\partial_a h_{b c} \partial^a h^{b c}+\partial_a h_b^b \partial^a h_c^c-2 \partial_a h_c^a \partial^c h_b^b+2 \partial_a h_c^a \partial_b h^{b c}\right).
@@ -102,15 +102,15 @@ Obviously, eq.\eqref{emz} has the form like eq.\eqref{dessoleq} in Appendix \ref
 \begin{equation}
     p=\frac{1}{2}\partial_z \ln\phi,\quad q=0,
 \end{equation}
-therefore $\Gamma\propto\phi^{1/2}\propto G^{-1/2}$ and $\Xi=-\frac{1}{4}\phi^{-2}(\partial_z\phi)^2+\frac{1}{2}\phi^{-1}\partial_z^2\phi=\frac{3}{4}G^{-2}(\partial_zG)^2-\frac{1}{2}G^{-1}\partial_z^2G$. If $G$ takes the Yukawa form
+therefore $\Gamma\propto\phi^{1/2}\propto G^{-1/2}$ and $\Xi=-\frac{1}{4}\phi^{-2}(\partial_z\phi)^2+\frac{1}{2}\phi^{-1}\partial_z^2\phi=\frac{3}{4}G^{-2}(\partial_zG)^2-\frac{1}{2}G^{-1}\partial_z^2G$. If $G$ takes the Yukawa form~\cite{Adelberger2003}
 \begin{equation}\label{Yukawa}
     G=G_\infty[1+\alpha(1+z/\lambda)e^{-z/\lambda}],
 \end{equation}
 there will be
 \begin{equation}
-    \Xi=\frac{1}{\lambda^2}\frac{\alpha[\alpha(z^2/\lambda^2+2)e^{-z/\lambda}-2(z/\lambda-1)]e^{-z/\lambda}}{4[\alpha(z/\lambda+1)e^{-z/\lambda}+1]^2}.
+    \Xi=\frac{1}{\lambda^2}\frac{+[\alpha(z/\lambda)e^{-z/\lambda}]^2+2[\alpha e^{-z/\lambda}]^2-2[\alpha(z/\lambda)e^{-z/\lambda}]+2[\alpha e^{-z/\lambda}]}{4[\alpha(z/\lambda+1)e^{-z/\lambda}+1]^2}.
 \end{equation}
-Moreover, if $\left\lvert\frac{ \Xi}{\omega^2}\right\rvert \ll 1$ and $1/\lambda\ll\omega/c$, which means that $G$ varies slowly, there will be $K\approx1+\frac{1}{4}\frac{\Xi}{\omega^2}\approx1$ and $\omega\int K^{-2}\,d z\approx\omega\int (1+\frac{1}{4}\frac{\Xi}{\omega^2})^{-2}\,d z\approx\omega\int (1-\frac{1}{2}\frac{\Xi}{\omega^2})\,d z$. Consequently, the amplitude of GW, which is proportional to $\Gamma^{-1}K$, will be approximately proportional to $G^{1/2}$, and the phase of GW, $\omega\int K^{-2}\,d z$, will have an approximate modification $-\omega\int \frac{1}{2}\frac{\Xi}{\omega^2}\,d z$.
+Moreover, if $\left\lvert\frac{ \Xi}{\omega^2}\right\rvert \ll 1$ and $1/\lambda\ll\omega/c$, which means that $G$ has has minor correction and slow variation, there will be $K\approx1+\frac{1}{4}\frac{\Xi}{\omega^2}\approx1$ and $\omega\int K^{-2}\,d z\approx\omega\int (1+\frac{1}{4}\frac{\Xi}{\omega^2})^{-2}\,d z\approx\omega\int (1-\frac{1}{2}\frac{\Xi}{\omega^2})\,d z$. Consequently, the amplitude of GW, which is proportional to $\Gamma^{-1}K$, will be approximately proportional to $G^{1/2}$, and the phase of GW, $\omega\int K^{-2}\,d z$, will have an approximate modification $-\omega\int \frac{1}{2}\frac{\Xi}{\omega^2}\,d z$.
 
 \section{Action method for Einstein-Hilbert action}
 
@@ -239,9 +239,9 @@ Again, obviously eq.\eqref{ehz} has the form like eq.\eqref{dessoleq} and now we
 \end{equation}
 therefore $\Gamma\propto\phi^{1/2}\propto G^{-1/2}$ and $\Xi=-\frac{1}{4}\phi^{-2}(\partial_z\phi)^2-\frac{3}{2}\phi^{-1}\partial_z^2\phi=-\frac{13}{4}G^{-2}(\partial_zG)^2+\frac{3}{2}G^{-1}\partial_z^2G$. If $G$ takes the Yukawa form eq.\eqref{Yukawa}, there will be
 \begin{equation}
-    \Xi=\frac{1}{\lambda^2}\frac{-\alpha[\alpha(7z^2/\lambda^2+6)e^{-z/\lambda}-6(z/\lambda-1)]e^{-z/\lambda}}{4[\alpha(z/\lambda+1)e^{-z/\lambda}+1]^2}.
+    \Xi=\frac{1}{\lambda^2}\frac{-7[\alpha(z/\lambda)e^{-z/\lambda}]^2-6[\alpha e^{-z/\lambda}]^2+6[\alpha(z/\lambda)e^{-z/\lambda}]-6[\alpha e^{-z/\lambda}]}{4[\alpha(z/\lambda+1)e^{-z/\lambda}+1]^2}.
 \end{equation}
-Again, if $\left\lvert\frac{ \Xi}{\omega^2}\right\rvert \ll 1$ and $1/\lambda\ll\omega/c$, which means that $G$ varies slowly, the amplitude of GW will be approximately proportional to $G^{1/2}$ and the phase of GW will have an approximate modification $-\omega\int \frac{1}{2}\frac{\Xi}{\omega^2}\,d z$.
+Again, if $\left\lvert\frac{ \Xi}{\omega^2}\right\rvert \ll 1$ and $1/\lambda\ll\omega/c$, which means that $G$ has minor correction and slow variation, the amplitude of GW will be approximately proportional to $G^{1/2}$ and the phase of GW will have an approximate modification $-\omega\int \frac{1}{2}\frac{\Xi}{\omega^2}\,d z$.
 
 \appendix
 \section{Solving wave equation}
@@ -302,25 +302,17 @@ We suppose that
     K=\sum_{n=0}^\infty K_n(\tilde{z})\kappa^{2n},
 \end{equation}
 and if we plug eq.\eqref{K} into eq.\eqref{equKs}, we will maintain a power series of $\kappa^2$ which is equal to $0$. We make each of the coefficients of this power series equal to $0$, for example,
-\begin{equation}
-    K_0^4-1=0,
-\end{equation}
-\begin{equation}
-    K_0^3K_0''-K_0^4\tilde{\Xi}+4K_0^3K_1=0,
-\end{equation}
-\begin{equation}
+\begin{gather}
+    K_0^4-1=0,\\
+    K_0^3K_0''-K_0^4\tilde{\Xi}+4K_0^3K_1=0,\\
     (K_0^3K_1''+3K_0^2K_1K_0'')-4K_0^3K_1\tilde{\Xi}+(4K_0^3K_2+6K_0^2K_1^2)=0.
-\end{equation}
+\end{gather}
 Finally, by solving all of these equations in order, we will find each of the coefficients in eq.\eqref{K}, for example,
-\begin{equation}
-    K_0=1,
-\end{equation}
-\begin{equation}
-    K_1=\frac{1}{4}\tilde{\Xi},
-\end{equation}
-\begin{equation}
+\begin{gather}
+    K_0=1,\\
+    K_1=\frac{1}{4}\tilde{\Xi},\\
     K_2=\frac{5}{32}\tilde{\Xi}^2-\frac{1}{16}\frac{d^2\tilde{\Xi}}{d\tilde{z}^2},
-\end{equation}
+\end{gather}
 and these coefficients will make our particular solution of $K$ similar to eq.\eqref{K0}.
 
 \bibliography{reference}
