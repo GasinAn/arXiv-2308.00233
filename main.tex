@@ -43,14 +43,14 @@ Department of Astronomy, Beijing Normal University, Beijing 102206, China
              % but any date may be explicitly specified
 
 \begin{abstract}
-In this note, we give the effect of varying gravitational constant $G$ on  gravitational wave (GW) during propagation. We separately make $G$ in Fierz-Pauli action and Einstein-Hilbert action vary, and then we maintain two modified GW equations with the same form. We then solve the equations for the situation in our interest, and our solution can be easily applied to gravitational constant in Yukawa form when it has minor correction and slow variation.
+In this note, we give the effect of varying gravitational constant $G$ on  gravitational waves (GWs) during propagations. We separately make $G$ in Fierz-Pauli action and Einstein-Hilbert action vary, and then we maintain two modified GW equations with the same form. We then solve the equations for the situation in our interest, and our solution can be easily applied to gravitational constant in Yukawa form when it has a minor correction and a slow variation. However, finally we find that it is impossible for us to measure the spatial variation of $G$ during GW propagations by only GW observations, and it is discussed in the final Appendix.
 \end{abstract}
 
 \keywords{gravitational constant, gravitational waves}
 
 \maketitle
 
-\section{Action method for Fierz-Pauli action}
+\section{Action Method for Fierz-Pauli Action}
 
 The Fierz-Pauli action for the field variable $h_{ab}$ is given by~\cite{Roy2020}
 \begin{equation}
@@ -112,7 +112,7 @@ there will be
 \end{equation}
 Moreover, if $\left\lvert\frac{ \Xi}{\omega^2}\right\rvert \ll 1$ and $1/\lambda\ll\omega/c$, which means that $G$ has has minor correction and slow variation, there will be $K\approx1+\frac{1}{4}\frac{\Xi}{\omega^2}\approx1$ and $\omega\int K^{-2}\,d z\approx\omega\int (1+\frac{1}{4}\frac{\Xi}{\omega^2})^{-2}\,d z\approx\omega\int (1-\frac{1}{2}\frac{\Xi}{\omega^2})\,d z$. Consequently, the amplitude of GW, which is proportional to $\Gamma^{-1}K$, will be approximately proportional to $G^{1/2}$, and the phase of GW, $\omega\int K^{-2}\,d z$, will have an approximate modification $-\omega\int \frac{1}{2}\frac{\Xi}{\omega^2}\,d z$.
 
-\section{Action method for Einstein-Hilbert action}
+\section{Action Method for Einstein-Hilbert Action}
 
 Using the \textit{xAct} module in Mathematica, we expand the Lagrangian of Einstein-Hilbert action up to second order
 \begin{equation}
@@ -244,8 +244,9 @@ therefore $\Gamma\propto\phi^{1/2}\propto G^{-1/2}$ and $\Xi=-\frac{1}{4}\phi^{-
 Again, if $\left\lvert\frac{ \Xi}{\omega^2}\right\rvert \ll 1$ and $1/\lambda\ll\omega/c$, which means that $G$ has minor correction and slow variation, the amplitude of GW will be approximately proportional to $G^{1/2}$ and the phase of GW will have an approximate modification $-\omega\int \frac{1}{2}\frac{\Xi}{\omega^2}\,d z$.
 
 \appendix
-\section{Solving wave equation}
-\label{sec:appa}
+
+\section{Solving Wave Equation}\label{sec:appa}
+
 In this appendix, we solve the wave equation. By expressing $h_{ij}$ as a Fourier transform, the
 wave equation for each Fourier amplitude becomes the following general linear form,
 \begin{equation}
@@ -276,7 +277,7 @@ We plug eq.\eqref{Apk} into eq.\eqref{rpart} and then achieve
     \frac{d^2 K}{d z^2}-\left(\frac{1}{\Gamma}\frac{d^2\Gamma}{d z^2}-q\right)K+\omega^2K(1-K^{-4})=0,
 \end{equation}
 where $\Gamma=e^{\int p \,dz}$ and $K=(k/\omega)^{-1/2}$. If $A=\check{A}$ and $k=+\check{k}$ satisfy eq.\eqref{rpart} and eq.\eqref{ipart}, $A=\check{A}$ and $k=-\check{k}$ will satisfy eq.\eqref{rpart} and eq.\eqref{ipart} as well. This means that since eq.\eqref{dessoleq} is linear, the general solution of eq.\eqref{dessoleq} can be expressed as
-\begin{equation}
+\begin{equation}\label{solution}
     H=C_+\Gamma^{-1}\check{K}e^{+i\omega\int  \check{K}^{-2}\,d z}+C_-\Gamma^{-1}\check{K}e^{-i\omega\int  \check{K}^{-2}\,d z},
 \end{equation}
 where $\check{K}$ is a particular solution of eq.\eqref{equK0}.
@@ -314,6 +315,14 @@ Finally, by solving all of these equations in order, we will find each of the co
     K_2=\frac{5}{32}\tilde{\Xi}^2-\frac{1}{16}\frac{d^2\tilde{\Xi}}{d\tilde{z}^2},
 \end{gather}
 and these coefficients will make our particular solution of $K$ similar to eq.\eqref{K0}.
+
+\section{Possibility of Measurement}
+
+Firstly, if gravitational constant $G$ has a spatial variation, then according to eq.\eqref{solution}, the GW do have a amplitude correction $\Gamma^{-1}(z){K}(z)$. However, the detector can only measure GW amplitudes in where the detector is, therefore it is impossible for the detector to compare different GW amplitudes in different places. Also, according to eq.\eqref{solution}, GWs of different frequencies have the same amplitude correction $\Gamma^{-1}(z){K}(z)$, therefore it is impossible for the detector to compare different amplitudes of GWs of different frequencies to measure the spatial variation of $G$.
+
+Secondly, according to eq.\eqref{solution}, GWs of different frequencies propagate in the same speed $c/{K}(z)^{-2}$, where $c$ is the speed of light in vacuum, which means phase differences between GWs of different frequencies will keep unchanged during GW propagations, therefore it is impossible for the detector to measure phase differences between GWs of different frequencies to measure the spatial variation of $G$.
+
+In conclusion, it is impossible for us to measure the spatial variation of $G$ during GW propagations by only GW observations.
 
 \bibliography{reference}
 
