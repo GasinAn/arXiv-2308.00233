@@ -1,8 +1,8 @@
-*.pdf
 *.sav
 *.gz
 *.aux
 *.log
 *.out
 *.bbl
+Figure/
 mainNotes.bib
